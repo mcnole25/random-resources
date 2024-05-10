@@ -9,6 +9,7 @@ Features:
 * Fixes the camera so it locks to the player
 * Press the R key to reset the player
 * Press the ` (grave accent) key to change the level hue
+* Shows a clone counter
 
 # How to download
 
