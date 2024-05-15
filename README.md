@@ -11,3 +11,8 @@ Features:
 * Press the R key to reset the player
 * Press the ` (grave accent) key to change the level hue
 * Shows a clone counter
+
+# Word List
+
+A list of 2951 common English words taken from Oxford 3000. Duplicates removed, no swear words.
+Useful for a dictionary or a word search engine.
