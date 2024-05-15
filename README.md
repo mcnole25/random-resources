@@ -1,7 +1,6 @@
 # Appel Mod
 
-A small mod for Appel to slightly improve gameplay.
-It can only be used via Turbowarp, because it uses Turbowarp exclusive blocks.
+A small mod for Appel to slightly improve gameplay. It can only be used via Turbowarp, because it uses Turbowarp exclusive blocks.
 
 Features:
 * Disables music by default
@@ -14,5 +13,4 @@ Features:
 
 # Word List
 
-A list of 2951 common English words taken from Oxford 3000. Duplicates removed, no swear words.
-Useful for a dictionary or a word search engine.
+A list of 2951 common English words taken from Oxford 3000. Duplicates removed, no swear words. Useful for a dictionary or a word search engine.
