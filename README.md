@@ -1,4 +1,4 @@
-# Appel Mod
+# Mod.sprite3
 
 A small mod for Appel to slightly improve gameplay. It can only be used via Turbowarp, because it uses Turbowarp exclusive blocks.
 
