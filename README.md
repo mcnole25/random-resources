@@ -1,3 +1,9 @@
+# 1000.gif / 1000.png
+
+Files made from MS paint and EZGif to generate my Scratch profile picture.
+
+It counts 000-999, and wraps around at 25 numbers per second. 1000.png is the spritesheet, and 1000.gif is the generated GIF file.
+
 # Mod.sprite3
 
 A small mod for Appel to slightly improve gameplay. It can only be used via Turbowarp, because it uses Turbowarp exclusive blocks.
