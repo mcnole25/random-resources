@@ -17,6 +17,6 @@ Features:
 * Press the ` (grave accent) key to change the level hue
 * Shows a clone counter
 
-# ewow-contestnats.txt
+# ewow-contestants.txt
 
 A compiled list of all contestants in alphabetical order from Cary Huang's "Eleven Words of Wisdom".
