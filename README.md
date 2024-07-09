@@ -16,3 +16,7 @@ Features:
 * Press the R key to reset the player
 * Press the ` (grave accent) key to change the level hue
 * Shows a clone counter
+
+# 2048-ultimate.png
+
+Just an image of hundreds of 2048 tiles designed by me.
