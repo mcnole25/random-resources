@@ -27,6 +27,6 @@ A bookmarklet for quickly converting US imperial units to metric. Works on Firef
 
 **Accepted syntax: "in to cm", "ft to m", "yd to m", "mi to km", "floz to ml", "cup to l", "gal to l", "oz to g", "lb to kg", "mph to m/s", "f to c"**
 
-# precise-calculator.zip
+# precise-calc.zip
 
 This is a simple and fast calculator that can calculate up to 400 significant digits. Uses an offline copy of the decimal.js library.
