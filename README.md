@@ -29,4 +29,4 @@ A bookmarklet for quickly converting US imperial units to metric. Works on Firef
 
 # precise-calculator.zip
 
-This is a simple and fast calculator that can store 50 decimal digits of precision. Uses an offline copy of the big.js library.
+This is a simple and fast calculator that can calculate up to 400 significant digits. Uses an offline copy of the decimal.js library.
