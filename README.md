@@ -26,3 +26,8 @@ Just an image of hundreds of 2048 tiles designed by me.
 A bookmarklet for quickly converting US imperial units to metric. Works on Firefox.
 
 **Accepted syntax: "in to cm", "ft to m", "yd to m", "mi to km", "floz to ml", "cup to l", "gal to l", "oz to g", "lb to kg", "mph to m/s", "f to c"**
+
+# precise-calc.html
+
+A small high precision calculator available to download for offline use. Uses an offline copy of the big.js library inside the html file.
+**NOTE: I do not own big.js. The library is fully owned by MikeMcl.**
