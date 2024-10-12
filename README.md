@@ -27,8 +27,10 @@ A bookmarklet for quickly converting US imperial units to metric. Works on Firef
 
 **Accepted syntax: "in to cm", "ft to m", "yd to m", "mi to km", "floz to ml", "cup to l", "gal to l", "oz to g", "lb to kg", "mph to m/s", "f to c"**
 
-# precise-calc.html
+# precise-calculator.html
 
 A small high precision calculator available to download for offline use. Uses an offline copy of the big.js library inside the html file.
+
+Operations supported are: Addition, multiplication, division, exponent, square root, and nCr (choosing r samples from n objects). For subtraction, add negative numbers. Operations up to 200 decimal places.
 
 **NOTE: I do not own big.js. The library is fully owned by MikeMcl.**
