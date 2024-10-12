@@ -30,4 +30,5 @@ A bookmarklet for quickly converting US imperial units to metric. Works on Firef
 # precise-calc.html
 
 A small high precision calculator available to download for offline use. Uses an offline copy of the big.js library inside the html file.
+
 **NOTE: I do not own big.js. The library is fully owned by MikeMcl.**
