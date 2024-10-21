@@ -31,7 +31,7 @@ A bookmarklet for quickly converting US imperial units to metric. Works on Firef
 
 A small high precision calculator available to download for offline use. Uses an offline copy of the big.js library inside the html file.
 
-Operations supported are: Basic arithmetic (+ - * /), exponents (integer power only), square root, factorial, nCr. Operations up to 500 decimals.
+Operations supported are: Basic arithmetic (+ - * /), exponents (integer power only), square root, factorial, nCr, cube root. Operations up to 500 decimals.
 
 The calculator has been tested and bugs have been recently fixed.
 
