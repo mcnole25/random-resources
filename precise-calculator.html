@@ -1055,15 +1055,25 @@
 <option value=5>+ √</option>
 <option value=6>+ !</option>
 <option value=7>nCr</option>
+<option value=8>+ ³√</option>
 </select>
 <input id=num2 value=0>
 <br>
 <textarea id=ans style="width:100%;height:500px;"></textarea>
+<button onclick="copy()">Copy Output</button>
+<span id=intDigits></span>
+<span>integer digit(s),</span>
+<span id=decPlaces></span>
+<span>decimal place(s)</span>
+<div>Tip 1: Type "v2" in an input for the square root of 2. Tip 2: Cube roots are rounded to 100 decimals instead of 500 for performance.</div>
 <script>
+sqrtTwo = Big(2).sqrt().toString();
 setInterval(function() {
 a = String(num1.value);
 b = String(num2.value);
 ans.innerHTML = "undefined";
+a = String(a).replace("v2", sqrtTwo);
+b = String(b).replace("v2", sqrtTwo);
 if (func.value == 0) {
 ans.innerHTML = new Big(a).plus(Big(b));
 }
@@ -1077,17 +1087,20 @@ if (func.value == 3) {
 ans.innerHTML = new Big(a).div(Big(b));
 }
 if (func.value == 4) {
+if (!(a.includes(".")) && Number(b) >= 0) {
+ans.innerHTML = BigInt(a) ** BigInt(b);
+} else {
 ans.innerHTML = new Big(a).pow(Number(b));
-}
+}}
 if (func.value == 5) {
 ans.innerHTML = new Big(b).sqrt().plus(Big(a));
 }
 function factorial(n) {
-fact = new Big(1);
+fact = BigInt(1);
 for (i = 1; i <= n; i++) {
-fact = fact.times(Big(i));
+fact = BigInt(fact) * BigInt(i);
 }
-return fact;
+return Big(String(fact));
 }
 if (func.value == 6) {
 ans.innerHTML = factorial(Number(b)).plus(Big(a));
@@ -1095,5 +1108,29 @@ ans.innerHTML = factorial(Number(b)).plus(Big(a));
 if (func.value == 7) {
 ans.innerHTML = factorial(Number(a)).div(factorial(Number(b)).times(factorial(Number(a) - Number(b))));
 }
+if (func.value == 8) {
+let cbrt = new Big(BigInt(2) ** BigInt(200));
+let step = new Big(BigInt(2) ** BigInt(200));
+for (j = 0; j < 550; j++) {
+step = Big(step).div(2);
+if (cbrt.pow(3).gt(b)) {
+cbrt = Big(cbrt).minus(step);
+}
+if (cbrt.pow(3).lt(b)) {
+cbrt = Big(cbrt).plus(step);
+}
+}
+ans.innerHTML = cbrt.round(100, 0).plus(Big(a));
+if (Number(b) < 0 || Number(b) > 10 ** 180) {ans.innerHTML = "undefined";}
+}
+intDigits.innerHTML = String(String(ans.innerHTML).replace("-", "").split(".")[0]).length;
+decPlaces.innerHTML = String(String(ans.innerHTML).split(".")[1]).length;
+if (String(String(ans.innerHTML).split(".")[1]) == "undefined") {
+decPlaces.innerHTML = "0";
+}
 });
+function copy() {
+document.querySelector("textarea").select();
+document.execCommand('copy');
+}
 </script>
