@@ -1065,7 +1065,7 @@
 <span>integer digit(s),</span>
 <span id=decPlaces></span>
 <span>decimal place(s)</span>
-<div>Tip 1: Type "v2" in an input for the square root of 2. Tip 2: Cube roots are rounded to 100 decimals instead of 500 for performance.</div>
+<div>Tip: Type "v2" in an input for the square root of 2.</div>
 <script>
 sqrtTwo = Big(2).sqrt().toString();
 setInterval(function() {
@@ -1109,18 +1109,18 @@ if (func.value == 7) {
 ans.innerHTML = factorial(Number(a)).div(factorial(Number(b)).times(factorial(Number(a) - Number(b))));
 }
 if (func.value == 8) {
-let cbrt = new Big(BigInt(2) ** BigInt(200));
-let step = new Big(BigInt(2) ** BigInt(200));
-for (j = 0; j < 550; j++) {
-step = Big(step).div(2);
-if (cbrt.pow(3).gt(b)) {
-cbrt = Big(cbrt).minus(step);
+let cbrt = 20n ** 512n;
+let step = 20n ** 512n;
+for (j = 0; j < 2500; j++) {
+step = BigInt(step) / 2n;
+if (BigInt(cbrt) ** 3n > BigInt(b) * 10n ** 1536n) {
+cbrt = BigInt(cbrt) - BigInt(step);
 }
-if (cbrt.pow(3).lt(b)) {
-cbrt = Big(cbrt).plus(step);
+if (BigInt(cbrt) ** 3n < BigInt(b) * 10n ** 1536n) {
+cbrt = BigInt(cbrt) + BigInt(step);
 }
 }
-ans.innerHTML = cbrt.round(100, 0).plus(Big(a));
+ans.innerHTML = Big(cbrt).div(10n ** 512n).round(500, 0).plus(Big(a));
 if (Number(b) < 0 || Number(b) > 10 ** 180) {ans.innerHTML = "undefined";}
 }
 intDigits.innerHTML = String(String(ans.innerHTML).replace("-", "").split(".")[0]).length;
