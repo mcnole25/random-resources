@@ -1121,7 +1121,6 @@ cbrt = BigInt(cbrt) + BigInt(step);
 }
 }
 ans.innerHTML = Big(cbrt).div(10n ** 512n).round(500, 0).plus(Big(a));
-if (Number(b) < 0 || Number(b) > 10 ** 400) {ans.innerHTML = "undefined";}
 }
 intDigits.innerHTML = String(String(ans.innerHTML).replace("-", "").split(".")[0]).length;
 decPlaces.innerHTML = String(String(ans.innerHTML).split(".")[1]).length;
