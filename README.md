@@ -35,4 +35,6 @@ Operations supported are: Basic arithmetic (+ - * /), exponents (integer power o
 
 The calculator has been tested and bugs have been recently fixed.
 
+Type "e" in an input for Euler's Number. Euler's Number is experimental and may have bugs.
+
 **NOTE: I do not own big.js. The library is fully owned by MikeMcl.**
