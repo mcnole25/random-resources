@@ -1068,12 +1068,26 @@
 <div>Tip: Type "v2" in an input for the square root of 2.</div>
 <script>
 sqrtTwo = Big(2).sqrt().toString();
+euler = 10n ** 510n;
+eFact = BigInt(1);
+for (i = 1; i <= 270; i++) {
+eFact = BigInt(eFact) * BigInt(i);
+euler = BigInt(euler) + (10n ** 510n) / BigInt(eFact);
+}
+euler = BigInt(euler) / 10000000000n;
+euler = Big(euler).div(Big(10).pow(500));
 setInterval(function() {
 a = String(num1.value);
 b = String(num2.value);
 ans.innerHTML = "undefined";
 a = String(a).replace("v2", sqrtTwo);
 b = String(b).replace("v2", sqrtTwo);
+if (String(a) == "e") {a = euler};
+if (String(b) == "e") {b = euler};
+if (String(ans.innerHTML) == "undefined") {
+intDigits.innerHTML = "0";
+decPlaces.innerHTML = "0";
+}
 if (func.value == 0) {
 ans.innerHTML = new Big(a).plus(Big(b));
 }
@@ -1109,8 +1123,8 @@ if (func.value == 7) {
 ans.innerHTML = factorial(Number(a)).div(factorial(Number(b)).times(factorial(Number(a) - Number(b))));
 }
 if (func.value == 8) {
-let cbrt = 20n ** 512n;
-let step = 20n ** 512n;
+cbrt = 20n ** 512n;
+step = 20n ** 512n;
 for (j = 0; j < 2500; j++) {
 step = BigInt(step) / 2n;
 if (BigInt(cbrt) ** 3n > BigInt(b) * 10n ** 1536n) {
@@ -1121,6 +1135,7 @@ cbrt = BigInt(cbrt) + BigInt(step);
 }
 }
 ans.innerHTML = Big(cbrt).div(10n ** 512n).round(500, 0).plus(Big(a));
+if (BigInt(num2.value) > 10n ** 450n) {ans.innerHTML = "undefined";}
 }
 intDigits.innerHTML = String(String(ans.innerHTML).replace("-", "").split(".")[0]).length;
 decPlaces.innerHTML = String(String(ans.innerHTML).split(".")[1]).length;
