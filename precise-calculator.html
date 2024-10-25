@@ -1101,11 +1101,15 @@ if (func.value == 3) {
 ans.innerHTML = new Big(a).div(Big(b));
 }
 if (func.value == 4) {
+if (num1.value == "e") {
+ans.innerHTML = new Big(String(euler)).pow(Number(b));
+}
 if (!(a.includes(".")) && Number(b) >= 0) {
 ans.innerHTML = BigInt(a) ** BigInt(b);
 } else {
 ans.innerHTML = new Big(a).pow(Number(b));
-}}
+}
+}
 if (func.value == 5) {
 ans.innerHTML = new Big(b).sqrt().plus(Big(a));
 }
