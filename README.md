@@ -38,3 +38,7 @@ The calculator has been tested and bugs have been recently fixed.
 Type "e" in an input for Euler's Number. Euler's Number is experimental and may have bugs.
 
 **NOTE: I do not own big.js. The library is fully owned by MikeMcl.**
+
+# bfdi-characters.txt
+
+List of contestant names in BFB/TPOT (67 of them) with the failed debuters (24 of them) and 9 extra characters to make it 100 people in total. Free to use.
