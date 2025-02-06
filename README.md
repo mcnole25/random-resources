@@ -1,8 +1,8 @@
 # 1000.gif / 1000.png
 
-Files made from MS paint and EZGif to generate my Scratch profile picture.
+Files made from MS paint & EZGif to generate my Scratch profile picture.
 
-It counts 000-999, and wraps around at 25 numbers per second. 1000.png is the spritesheet, and 1000.gif is the generated GIF file.
+It counts 000-999, & wraps around at 25 numbers per second. 1000.png is the spritesheet, & 1000.gif is the generated GIF file.
 
 # Mod.sprite3
 
@@ -33,12 +33,12 @@ A small high precision calculator available to download for offline use. Uses an
 
 Operations supported are: Basic arithmetic (+ - * /), exponents (integer power only), square root, factorial, nCr, cube root. Operations up to 500 decimals.
 
-The calculator has been tested and bugs have been recently fixed.
+The calculator has been tested & bugs have been recently fixed.
 
-Type "e" in an input for Euler's Number. Euler's Number is experimental and may have bugs.
+Type "e" in an input for Euler's Number. Euler's Number is experimental & may have bugs.
 
 **NOTE: I do not own big.js. The library is fully owned by MikeMcl.**
 
 # bfdi-characters.txt
 
-List of contestant names in BFB/TPOT (67 of them) with the failed debuters (24 of them) and 9 extra characters to make it 100 people in total. Free to use.
+List of contestant names in BFB/TPOT (67 of them) with the failed debuters (24 of them) & 9 extra characters to make it 100 people in total. Free to use.
