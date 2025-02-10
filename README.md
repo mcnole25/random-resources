@@ -1,3 +1,9 @@
+# combinatorics-calculator
+
+(NEW) An HTML file to calculate all possible ways to do stuff like: Choosing x items from a y-set, Number of ways to order x things with y fixed points, etc.
+
+Note: X & Y values higher than 170 may not work due to floating point limitations. Inputting very high values uses a lot of computation, so your browser may tell you a script is running too long.
+
 # 1000.gif / 1000.png
 
 Files made from MS paint & EZGif to generate my Scratch profile picture.
