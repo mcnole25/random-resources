@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<span>Generate</span>
+<select id="comb">
+<option value=0>X repeated permutations of Y</option>
+<option value=1>X repeated combinations of Y</option>
+<option value=2>X permutations of Y</option>
+<option value=3>X combinations of Y</option>
+<option value=4>Subsets of an X-set</option>
+<option value=5>2X terms split into 2 teams</option>
+<option value=6>Partitions of X into exactly Y parts</option>
+<option value=7>Partitions of X into at most Y parts</option>
+<option value=8>Arrangements of X with Y fixed points</option>
+</select>
+<button onclick="generate()">Generate</button><br>
+<span>X (amount of options/number to use)</span>
+<input id="xInput" type="number" value=6><br>
+<div id="yHide">
+<span>Y (amount to choose/partition parts)</span>
+<input id="yInput" type="number" value=3><br>
+</div>
+<div id="count">Adjust the generation type, X, & Y values, then click Generate.</div>
+<textarea id="output" style="width: 90vw; height: 90vh; resize: none;"></textarea>
+<script>
+setInterval(function() {
+if (comb.value == 4 || comb.value == 5) {
+yHide.style.visibility = "hidden";
+yHide.style.display = "none";
+} else {
+yHide.style.visibility = "visible";
+yHide.style.display = "inline";
+}
+});
+function generate() {
+let x = Number(xInput.value);
+let y = Number(yInput.value);
+let set = [];
+output.value = "";
+if (comb.value == 0) {
+let set = Array(y).fill(1);
+for (i = 0; i < x**y; i++) {
+output.value += set + "\n";
+set[set.length - 1]++;
+for (j = 1; j < y; j++) {
+if (Number(set[set.length - j]) > x) {
+set[set.length - j] = 1;
+set[set.length - j - 1]++;
+}
+}
+}
+output.value = output.value.slice(0, output.value.length - 1);
+count.innerHTML = Math.round(x**y) + " combination(s) generated";
+}
+if (comb.value == 1) {
+let set = Array(y).fill(1);
+for (i = 0; i < nCr(x + y - 1, y); i++) {
+output.value += set + "\n";
+set[set.length - 1]++;
+for (j = 1; j < y; j++) {
+if (Number(set[set.length - j]) > x) {
+set[set.length - j - 1]++;
+for(k = set.length - 1; k >= set.length - j; k--) {
+set[k] = set[set.length - j - 1];
+}
+}
+}
+}
+output.value = output.value.slice(0, output.value.length - 1);
+count.innerHTML = Math.round(nCr(x + y - 1, y)) + " combination(s) generated";
+}
+if (comb.value == 2) {
+let set = Array.from({length: x}, (_, i) => i + 1);
+output.value += JSON.stringify(generatePermutations(set, y)).replaceAll("],[", "\n").replaceAll("[", "").replaceAll("]", "");
+count.innerHTML = Math.round(nCr(x, y) * fact(y)) + " combination(s) generated";
+}
+if (comb.value == 3) {
+keys = Array.from({length: x}, (_, i) => i + 1);
+set2 = [];
+recursive(y, 0, []);
+output.value += JSON.stringify(set2).replaceAll("],[", "\n").replaceAll("[", "").replaceAll("]", "");
+count.innerHTML = Math.round(nCr(x, y)) + " combination(s) generated";
+}
+if (comb.value == 4) {
+for (j = 0; j <= x; j++) {
+keys = Array.from({length: x}, (_, i) => i + 1);
+set2 = [];
+recursive(j, 0, []);
+output.value += JSON.stringify(set2).replaceAll("],[", "\n").replaceAll("[", "").replaceAll("]", "") + "\n";
+}
+output.value = output.value.slice(0, output.value.length - 1);
+count.innerHTML = Math.round(2**x) + " combination(s) generated";
+}
+if (comb.value == 5) {
+keys = Array.from({length: 2*x}, (_, i) => i + 1);
+set2 = [];
+recursive(x, 0, []);
+output.value += JSON.stringify(set2).replaceAll("],[", "\n").replaceAll("[", "").replaceAll("]", "");
+let versus = [];
+for (j = 0; j < nCr(2*x, x)/2; j++) {
+versus[j] = output.value.split("\n")[j] + " vs. " + output.value.split("\n")[output.value.split("\n").length - j - 1]
+}
+output.value = versus.join("\n");
+count.innerHTML = Math.round(nCr(2*x, x)/2) + " combination(s) generated";
+}
+if (comb.value == 6) {
+let set = Array(y).fill(1);
+for (i = 0; i < nCr(x + y - 1, y); i++) {
+let sum = 0;
+set.forEach(xx => {sum += xx;});
+if (sum == x) {
+output.value += set.join("+") + "\n";
+}
+set[set.length - 1]++;
+for (j = 1; j < y; j++) {
+if (Number(set[set.length - j]) > x) {
+set[set.length - j - 1]++;
+for(k = set.length - 1; k >= set.length - j; k--) {
+set[k] = set[set.length - j - 1];
+}
+}
+}
+}
+output.value = output.value.slice(0, output.value.length - 1);
+count.innerHTML = output.value.split("\n").length + " combination(s) generated";
+}
+if (comb.value == 7) {
+for (kk = 1; kk <= y; kk++) {
+let set = Array(kk).fill(1);
+for (i = 0; i < nCr(x + kk - 1, kk); i++) {
+let sum = 0;
+set.forEach(xx => {sum += xx;});
+if (sum == x) {
+output.value += set.join("+") + "\n";
+}
+set[set.length - 1]++;
+for (j = 1; j < kk; j++) {
+if (Number(set[set.length - j]) > x) {
+set[set.length - j - 1]++;
+for(k = set.length - 1; k >= set.length - j; k--) {
+set[k] = set[set.length - j - 1];
+}
+}
+}
+}
+}
+output.value = output.value.slice(0, output.value.length - 1);
+count.innerHTML = output.value.split("\n").length + " combination(s) generated";
+}
+if (comb.value == 8) {
+let set = Array.from({length: x}, (_, i) => i + 1);
+output.value += JSON.stringify(generatePermutations(set, x)).replaceAll("],[", "\n").replaceAll("[", "").replaceAll("]", "");
+let fixedOutput = [];
+for (i = 0; i < fact(x); i++) {
+let fixed = 0;
+for (j = 0; j < x; j++) {
+fixed += Number(Number(output.value.split("\n")[i].split(",")[j]) == j + 1);
+}
+if (fixed == y) {
+fixedOutput.push(output.value.split("\n")[i]);
+}
+}
+output.value = fixedOutput.join("\n");
+count.innerHTML = output.value.split("\n").length + " combination(s) generated";
+}
+}
+function nCr(n, r) {
+return fact(n) / (fact(r) * fact(n - r));
+}
+function fact(n) {
+if (n==0 || n==1)
+return 1;
+let res = 1;
+for (ii = 2; ii <= n; ii++)
+res = res * ii;
+return res;
+}
+function generatePermutations(list, size=list.length) {
+if (size > list.length) return [];
+else if (size == 1) return list.map(d=>[d]); 
+return list.flatMap(d => generatePermutations(list.filter(a => a !== d), size - 1).map(item => [d, ...item]));
+}
+function recursive(need, s, a) {
+if (need == 0) {
+b = a.slice(0);
+set2.push(b);
+return;
+}
+for(var jj = s; jj < keys.length; jj++) {
+b = a.slice(0);
+b.push(keys[jj]); 
+recursive(need-1, jj+1, b);
+}
+}
+</script>
