@@ -8,8 +8,9 @@
 <option value=4>Subsets of an X-set</option>
 <option value=5>2X terms split into 2 teams</option>
 <option value=6>Partitions of X into exactly Y parts</option>
-<option value=7>Partitions of X into at most Y parts</option>
+<option value=7>All partitions of X</option>
 <option value=8>Arrangements of X with Y fixed points</option>
+<option value=9>All distinct partitions of X</option>
 </select>
 <button onclick="generate()">Generate</button><br>
 <span>X (amount of options/number to use)</span>
@@ -22,7 +23,7 @@
 <textarea id="output" style="width: 90vw; height: 80vh; resize: none;"></textarea>
 <script>
 setInterval(function() {
-if (comb.value == 4 || comb.value == 5) {
+if (comb.value == 4 || comb.value == 5 || comb.value == 7 || comb.value == 9) {
 yHide.style.visibility = "hidden";
 yHide.style.display = "none";
 } else {
@@ -123,26 +124,10 @@ output.value = output.value.slice(0, output.value.length - 1);
 count.innerHTML = output.value.split("\n").length + " combination(s) generated";
 }
 if (comb.value == 7) {
-for (kk = 1; kk <= y; kk++) {
-let set = Array(kk).fill(1);
-for (i = 0; i < nCr(x + kk - 1, kk); i++) {
-let sum = 0;
-set.forEach(xx => {sum += xx;});
-if (sum == x) {
-output.value += set.join("+") + "\n";
-}
-set[set.length - 1]++;
-for (j = 1; j < kk; j++) {
-if (Number(set[set.length - j]) > x) {
-set[set.length - j - 1]++;
-for(k = set.length - 1; k >= set.length - j; k--) {
-set[k] = set[set.length - j - 1];
-}
-}
-}
-}
-}
-output.value = output.value.slice(0, output.value.length - 1);
+const sol = new Solution();
+ans = sol.uniquePartitions(x);
+ans.forEach(i => output.value += i + "\n");
+output.value = output.value.slice(0, output.value.length - 1).replaceAll(",", "+");
 count.innerHTML = output.value.split("\n").length + " combination(s) generated";
 }
 if (comb.value == 8) {
@@ -159,6 +144,21 @@ fixedOutput.push(output.value.split("\n")[i]);
 }
 }
 output.value = fixedOutput.join("\n");
+count.innerHTML = output.value.split("\n").length + " combination(s) generated";
+}
+if (comb.value == 9) {
+const sol = new Solution();
+ans = sol.uniquePartitions(x);
+ans.forEach(i => output.value += i + "\n");
+distParts = output.value.split("\n");
+function hasDuplicates(array) {
+return (new Set(array)).size !== array.length;
+}
+for (i = 0; i < output.value.split("\n").length; i++) {
+if (hasDuplicates(distParts[i].split(","))) {distParts[i] = "";}
+}
+output.value = distParts.join("\n").replaceAll(",", "+").replace(/^\s*\n/gm, "");
+output.value = output.value.slice(0, output.value.length - 1);
 count.innerHTML = output.value.split("\n").length + " combination(s) generated";
 }
 }
@@ -188,6 +188,39 @@ for(var jj = s; jj < keys.length; jj++) {
 b = a.slice(0);
 b.push(keys[jj]); 
 recursive(need-1, jj+1, b);
+}
+}
+class Solution {
+constructor() {
+	this.temp = [];
+}
+solve(a, v, idx, s, n) 
+{
+	// first base case if sum=n we can store vector in a vector
+	if (s === n) {
+	v.push([...this.temp]);
+	return;
+	}
+	// if idx < 0 return
+	if (idx < 0) {
+	return;
+	}
+	// not take condition
+	this.solve(a, v, idx - 1, s, n);
+	if (s < n) {
+	this.temp.push(a[idx]);
+	// this is main condition where we can take one element many times
+	this.solve(a, v, idx, s + a[idx], n);
+	this.temp.pop();
+	}
+}
+uniquePartitions(n) {
+	const a = Array.from({ length: n }, (_, i) => i + 1);
+	const v = [];
+	// call solve to get answer
+	this.solve(a, v, n - 1, 0, n);
+	v.reverse();
+	return v;
 }
 }
 </script>
