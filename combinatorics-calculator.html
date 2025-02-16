@@ -7,10 +7,12 @@
 <option value=3>X combinations of Y</option>
 <option value=4>Subsets of an X-set</option>
 <option value=5>2X terms split into 2 teams</option>
-<option value=6>Partitions of X into exactly Y parts</option>
+<option value=6>Partitions of X into Y parts</option>
 <option value=7>All partitions of X</option>
 <option value=8>Arrangements of X with Y fixed points</option>
 <option value=9>All distinct partitions of X</option>
+<option value=10>Distinct partitions of X into Y parts</option>
+<option value=11>X-bead necklaces w/ 2 colours</option>
 </select>
 <button onclick="generate()">Generate</button><br>
 <span>X (amount of options/number to use)</span>
@@ -23,7 +25,7 @@
 <textarea id="output" style="width: 90vw; height: 80vh; resize: none;"></textarea>
 <script>
 setInterval(function() {
-if (comb.value == 4 || comb.value == 5 || comb.value == 7 || comb.value == 9) {
+if (comb.value == 4 || comb.value == 5 || comb.value == 7 || comb.value == 9 || comb.value == 11) {
 yHide.style.visibility = "hidden";
 yHide.style.display = "none";
 } else {
@@ -102,7 +104,7 @@ versus[j] = output.value.split("\n")[j] + " vs. " + output.value.split("\n")[out
 output.value = versus.join("\n");
 count.innerHTML = Math.round(nCr(2*x, x)/2) + " combination(s) generated";
 }
-if (comb.value == 6) {
+if (comb.value == 6 || comb.value == 10) {
 let set = Array(y).fill(1);
 for (i = 0; i < nCr(x + y - 1, y); i++) {
 let sum = 0;
@@ -121,6 +123,13 @@ set[k] = set[set.length - j - 1];
 }
 }
 output.value = output.value.slice(0, output.value.length - 1);
+let dist = [];
+for (i = 0; i < output.value.split("\n").length; i++) {
+if ((((new Set(output.value.split("\n")[i].split("+"))).size == output.value.split("\n")[i].split("+").length) && comb.value == 10) || comb.value == 6) {
+dist.push(output.value.split("\n")[i].split("+").reverse().join("+"));
+}
+}
+output.value = dist.join("\n");
 count.innerHTML = output.value.split("\n").length + " combination(s) generated";
 }
 if (comb.value == 7) {
@@ -161,6 +170,25 @@ output.value = distParts.join("\n").replaceAll(",", "+").replace(/^\s*\n/gm, "")
 output.value = output.value.slice(0, output.value.length - 1);
 count.innerHTML = output.value.split("\n").length + " combination(s) generated";
 }
+if (comb.value == 11) {
+let set = [];
+for (i = 2**x; i < 2**(x + 1); i++) {
+let necklace = Number(i).toString(2).slice(1, x + 1).repeat(2);
+let decimals = [];
+for (j = 0; j < x; j++) {
+necklace = String(necklace.slice(1, x)) + String(necklace.charAt(0));
+decimals.push(parseInt(necklace, 2));
+}
+shift = decimals.indexOf(Math.min(...decimals));
+necklace = String(necklace.slice(shift, x)) + String(necklace.slice(0, shift));
+necklace = necklace.replaceAll("", "-");
+if (!set.includes(necklace)) {
+set.push(necklace);
+}
+}
+output.value = set.join("\n");
+count.innerHTML = output.value.split("\n").length + " combination(s) generated";
+}
 }
 function nCr(n, r) {
 return fact(n) / (fact(r) * fact(n - r));
@@ -196,20 +224,16 @@ constructor() {
 }
 solve(a, v, idx, s, n) 
 {
-	// first base case if sum=n we can store vector in a vector
 	if (s === n) {
 	v.push([...this.temp]);
 	return;
 	}
-	// if idx < 0 return
 	if (idx < 0) {
 	return;
 	}
-	// not take condition
 	this.solve(a, v, idx - 1, s, n);
 	if (s < n) {
 	this.temp.push(a[idx]);
-	// this is main condition where we can take one element many times
 	this.solve(a, v, idx, s + a[idx], n);
 	this.temp.pop();
 	}
@@ -217,7 +241,6 @@ solve(a, v, idx, s, n)
 uniquePartitions(n) {
 	const a = Array.from({ length: n }, (_, i) => i + 1);
 	const v = [];
-	// call solve to get answer
 	this.solve(a, v, n - 1, 0, n);
 	v.reverse();
 	return v;
