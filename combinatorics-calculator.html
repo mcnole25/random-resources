@@ -184,7 +184,7 @@ for (j = 0; j < x; j++) {
 necklace = String(necklace.slice(1, x)) + String(necklace.charAt(0));
 decimals.push(parseInt(necklace, y));
 }
-shift = decimals.indexOf(Math.min(...decimals));
+shift = decimals.indexOf(Math.min(...decimals)) + 1;
 necklace = String(necklace.slice(shift, x)) + String(necklace.slice(0, shift));
 necklace = necklace.replaceAll("", "-");
 if (!set.includes(necklace)) {
@@ -227,7 +227,7 @@ for (j = 0; j < x; j++) {
 necklace = String(necklace.slice(1, x)) + String(necklace.charAt(0));
 decimals.push(parseInt(necklace, y));
 }
-shift = decimals.indexOf(Math.min(...decimals));
+shift = decimals.indexOf(Math.min(...decimals)) + 1;
 necklace = String(necklace.slice(shift, x)) + String(necklace.slice(0, shift));
 necklace = necklace.replaceAll("", "-");
 necklace2 = Number(i).toString(y).slice(1, x + 1).repeat(2).split("").reverse().join("");
@@ -236,7 +236,7 @@ for (j = 0; j < x; j++) {
 necklace2 = String(necklace2.slice(1, x)) + String(necklace2.charAt(0));
 decimals.push(parseInt(necklace2, y));
 }
-shift = decimals.indexOf(Math.min(...decimals));
+shift = decimals.indexOf(Math.min(...decimals)) + 1;
 necklace2 = String(necklace2.slice(shift, x)) + String(necklace2.slice(0, shift));
 necklace2 = necklace2.replaceAll("", "-");
 if (!set.includes(necklace)) {
