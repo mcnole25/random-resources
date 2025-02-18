@@ -14,10 +14,11 @@ span, div {color: #fff;}
 <option value=6>Partitions of X into Y parts</option>
 <option value=10>Distinct partitions of X into Y parts</option>
 <option value=4>Subsets of an X-set</option>
+<option value=8>Arrangements of X with Y fixed points</option>
 <option value=5>2X terms split into 2 teams</option>
 <option value=12>3X terms split into 3 teams</option>
-<option value=8>Arrangements of X with Y fixed points</option>
-<option value=11>X-bead necklaces w/ 2 colours</option>
+<option value=11>X-bead necklaces w/ Y colours</option>
+<option value=13>X-bead bracelets w/ Y colours</option>
 </select>
 <button onclick="generate()">Generate</button><br>
 <span>X (amount of options/number to use)</span>
@@ -30,7 +31,7 @@ span, div {color: #fff;}
 <textarea id="output" style="width: 90vw; height: 80vh; resize: none;"></textarea>
 <script>
 setInterval(function() {
-if (comb.value == 4 || comb.value == 5 || comb.value == 7 || comb.value == 9 || comb.value == 11 || comb.value == 12) {
+if (comb.value == 4 || comb.value == 5 || comb.value == 7 || comb.value == 9 || comb.value == 12) {
 yHide.style.visibility = "hidden";
 yHide.style.display = "none";
 } else {
@@ -176,12 +177,12 @@ count.innerHTML = output.value.split("\n").length + " combination(s) generated";
 }
 if (comb.value == 11) {
 let set = [];
-for (i = 2**x; i < 2**(x + 1); i++) {
-let necklace = Number(i).toString(2).slice(1, x + 1).repeat(2);
+for (i = y**x; i < y**(x + 1); i++) {
+let necklace = Number(i).toString(y).slice(1, x + 1).repeat(2);
 let decimals = [];
 for (j = 0; j < x; j++) {
 necklace = String(necklace.slice(1, x)) + String(necklace.charAt(0));
-decimals.push(parseInt(necklace, 2));
+decimals.push(parseInt(necklace, y));
 }
 shift = decimals.indexOf(Math.min(...decimals));
 necklace = String(necklace.slice(shift, x)) + String(necklace.slice(0, shift));
@@ -215,6 +216,42 @@ set4.push(set2);
 }
 output.value += JSON.stringify(set4).replaceAll("],[", "\n").replaceAll("[", "").replaceAll("]", "").replaceAll("\",\"", "\n").replaceAll("\"", "");
 count.innerHTML = (nCr(3*x, x) * nCr(2*x, x))/6 + " combination(s) generated";
+}
+if (comb.value == 13) {
+let set = [];
+let bracelets = [];
+for (i = y**x; i < y**(x + 1); i++) {
+let necklace = Number(i).toString(y).slice(1, x + 1).repeat(2);
+let decimals = [];
+for (j = 0; j < x; j++) {
+necklace = String(necklace.slice(1, x)) + String(necklace.charAt(0));
+decimals.push(parseInt(necklace, y));
+}
+shift = decimals.indexOf(Math.min(...decimals));
+necklace = String(necklace.slice(shift, x)) + String(necklace.slice(0, shift));
+necklace = necklace.replaceAll("", "-");
+necklace2 = Number(i).toString(y).slice(1, x + 1).repeat(2).split("").reverse().join("");
+decimals = [];
+for (j = 0; j < x; j++) {
+necklace2 = String(necklace2.slice(1, x)) + String(necklace2.charAt(0));
+decimals.push(parseInt(necklace2, y));
+}
+shift = decimals.indexOf(Math.min(...decimals));
+necklace2 = String(necklace2.slice(shift, x)) + String(necklace2.slice(0, shift));
+necklace2 = necklace2.replaceAll("", "-");
+if (!set.includes(necklace)) {
+set.push(necklace);
+}
+if (set.includes(necklace2)) {
+set = set.filter(e => e !== necklace2);
+}
+if (!bracelets.includes(necklace)) {
+bracelets.push(necklace);
+}
+}
+bracelets = bracelets.filter(( el ) => !set.includes( el ));
+output.value = bracelets.join("\n");
+count.innerHTML = output.value.split("\n").length + " combination(s) generated";
 }
 }
 function nCr(n, r) {
