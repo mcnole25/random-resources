@@ -101,12 +101,11 @@ if (comb.value == 5) {
 keys = Array.from({length: 2*x}, (_, i) => i + 1);
 set2 = [];
 recursive(x, 0, []);
-output.value += JSON.stringify(set2).replaceAll("],[", "\n").replaceAll("[", "").replaceAll("]", "");
-let versus = [];
-for (j = 0; j < nCr(2*x, x)/2; j++) {
-versus[j] = output.value.split("\n")[j] + " vs. " + output.value.split("\n")[output.value.split("\n").length - j - 1]
+for (i = 0; i < nCr(2*x, x)/2; i++) {
+set2[i] += " vs. " + set2[nCr(2*x, x) - i - 1];
 }
-output.value = versus.join("\n");
+set2.splice(nCr(2*x, x)/2, nCr(2*x, x)/2);
+output.value += JSON.stringify(set2).replaceAll("],[", "\n").replaceAll("[", "").replaceAll("]", "").replaceAll("\",\"", "\n").replaceAll("\"", "");
 count.innerHTML = Math.round(nCr(2*x, x)/2) + " combination(s) generated";
 }
 if (comb.value == 6 || comb.value == 10) {
