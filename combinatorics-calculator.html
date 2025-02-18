@@ -15,6 +15,7 @@ span, div {color: #fff;}
 <option value=10>Distinct partitions of X into Y parts</option>
 <option value=4>Subsets of an X-set</option>
 <option value=5>2X terms split into 2 teams</option>
+<option value=12>3X terms split into 3 teams</option>
 <option value=8>Arrangements of X with Y fixed points</option>
 <option value=11>X-bead necklaces w/ 2 colours</option>
 </select>
@@ -29,7 +30,7 @@ span, div {color: #fff;}
 <textarea id="output" style="width: 90vw; height: 80vh; resize: none;"></textarea>
 <script>
 setInterval(function() {
-if (comb.value == 4 || comb.value == 5 || comb.value == 7 || comb.value == 9 || comb.value == 11) {
+if (comb.value == 4 || comb.value == 5 || comb.value == 7 || comb.value == 9 || comb.value == 11 || comb.value == 12) {
 yHide.style.visibility = "hidden";
 yHide.style.display = "none";
 } else {
@@ -192,6 +193,29 @@ set.push(necklace);
 }
 output.value = set.join("\n");
 count.innerHTML = output.value.split("\n").length + " combination(s) generated";
+}
+if (comb.value == 12) {
+keys = Array.from({length: 3*x}, (_, i) => i + 1);
+set2 = [];
+recursive(x, 0, []);
+set3 = set2;
+set2 = [];
+recursive(2*x, 0, []);
+set2.reverse();
+set4 = [];
+set5 = set2;
+for (i = 0; i < set5.length/3; i++) {
+keys = set5[i];
+set2 = [];
+recursive(x, 0, []);
+for (j = 0; j < set2.length; j++) {
+set2[j] = set3[i] + " vs. " + set2[j] + " vs. " + set2[set2.length - j - 1];
+}
+set2 = set2.splice(0, set2.length/2);
+set4.push(set2);
+}
+output.value += JSON.stringify(set4).replaceAll("],[", "\n").replaceAll("[", "").replaceAll("]", "").replaceAll("\",\"", "\n").replaceAll("\"", "");
+count.innerHTML = (nCr(3*x, x) * nCr(2*x, x))/6 + " combination(s) generated";
 }
 }
 function nCr(n, r) {
