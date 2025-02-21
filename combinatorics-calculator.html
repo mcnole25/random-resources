@@ -15,6 +15,7 @@ span, div {color: #fff;}
 <option value=10>Distinct partitions of X into Y parts</option>
 <option value=4>Subsets of an X-set</option>
 <option value=8>Arrangements of X with Y fixed points</option>
+<option value=14>X unlabeled balls into Y boxes</option>
 <option value=5>2X terms split into 2 teams</option>
 <option value=12>3X terms split into 3 teams</option>
 <option value=11>X-bead necklaces w/ Y colours</option>
@@ -48,11 +49,11 @@ if (comb.value == 0) {
 let set = Array(y).fill(1);
 for (i = 0; i < x**y; i++) {
 output.value += set + "\n";
-set[set.length - 1]++;
+set[y - 1]++;
 for (j = 1; j < y; j++) {
-if (Number(set[set.length - j]) > x) {
-set[set.length - j] = 1;
-set[set.length - j - 1]++;
+if (Number(set[y - j]) > x) {
+set[y - j] = 1;
+set[y - j - 1]++;
 }
 }
 }
@@ -63,12 +64,12 @@ if (comb.value == 1) {
 let set = Array(y).fill(1);
 for (i = 0; i < nCr(x + y - 1, y); i++) {
 output.value += set + "\n";
-set[set.length - 1]++;
+set[y - 1]++;
 for (j = 1; j < y; j++) {
-if (Number(set[set.length - j]) > x) {
-set[set.length - j - 1]++;
-for(k = set.length - 1; k >= set.length - j; k--) {
-set[k] = set[set.length - j - 1];
+if (Number(set[y - j]) > x) {
+set[y - j - 1]++;
+for (k = y - 1; k >= y - j; k--) {
+set[k] = set[y - j - 1];
 }
 }
 }
@@ -93,7 +94,7 @@ for (j = 0; j <= x; j++) {
 keys = Array.from({length: x}, (_, i) => i + 1);
 set2 = [];
 recursive(j, 0, []);
-output.value += JSON.stringify(set2).replaceAll("],[", "\n").replaceAll("[", "").replaceAll("]", "") + "\n";
+output.value += "{" + JSON.stringify(set2).replaceAll("],[", "}\n{").replaceAll("[", "").replaceAll("]", "") + "}\n";
 }
 output.value = output.value.slice(0, output.value.length - 1);
 count.innerHTML = Math.round(2**x) + " combination(s) generated";
@@ -117,12 +118,12 @@ set.forEach(xx => {sum += xx;});
 if (sum == x) {
 output.value += set.join("+") + "\n";
 }
-set[set.length - 1]++;
+set[y - 1]++;
 for (j = 1; j < y; j++) {
-if (Number(set[set.length - j]) > x) {
-set[set.length - j - 1]++;
-for(k = set.length - 1; k >= set.length - j; k--) {
-set[k] = set[set.length - j - 1];
+if (Number(set[y - j]) > x) {
+set[y - j - 1]++;
+for (k = y - 1; k >= y - j; k--) {
+set[k] = set[y - j - 1];
 }
 }
 }
@@ -251,6 +252,27 @@ bracelets.push(necklace);
 }
 bracelets = bracelets.filter(( el ) => !set.includes( el ));
 output.value = bracelets.join("\n");
+count.innerHTML = output.value.split("\n").length + " combination(s) generated";
+}
+if (comb.value == 14) {
+let set = Array(y).fill(0);
+for (i = 0; i < (x + 1)**y; i++) {
+if (set.reduce((a, b) => a + b, 0) == x) {
+let boxes = [];
+for (j = 0; j < y; j++) {
+boxes.push((j + 1) + ":[" + "\u25CB".repeat(set[j]) + "]");
+}
+output.value += boxes + "\n";
+}
+set[y - 1]++;
+for (j = 1; j < y; j++) {
+if (Number(set[y - j]) > x) {
+set[y - j] = 0;
+set[y - j - 1]++;
+}
+}
+}
+output.value = output.value.slice(0, output.value.length - 1);
 count.innerHTML = output.value.split("\n").length + " combination(s) generated";
 }
 }
