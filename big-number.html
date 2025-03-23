@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html><head>
+<title>Big Number Calculator</title>
+<style>
+body, button, input, select, textarea {background-color: #222; color: #fff; font-family: arial;}
+body {overflow: hidden;}
+button {background-color: #03f; color: #000; position: absolute; left: calc(100% - 75px); width: 75px;}
+span {margin: 0px 5px;}
+input, select {width: 100px;}
+textarea {margin: 10px 0px; width: 100%; height: 85vh; resize: none;}
+</style>
+</head><body>
+<select id="mode">
+<option value="power2">2 ^</option>
+<option value="power3">3 ^</option>
+<option value="power5">5 ^</option>
+<option value="power6">6 ^</option>
+<option value="power7">7 ^</option>
+<option value="factorial">Factorial()</option>
+<option value="fibonacci">Fibonacci()</option>
+</select>
+<input id="value"><span id="digitLength"></span>
+<button id="searchButton" onclick="calculate()">Calculate</button><br>
+<textarea id="result"></textarea>
+<script>
+function calculate() {
+power = Number(value.value);
+if (mode.value.includes("power")) {
+base = mode.value.charAt(5);
+digits = [BigInt(base)**(BigInt(power)%10000n)];
+for (j = 0; j < BigInt(power)/10000n; j++) {
+digits.unshift(0n);
+for (i = 0; i < digits.length; i++) {
+digits[i] *= BigInt(base)**10000n;
+if (digits[i - 1] != null) {digits[i - 1] = BigInt(digits[i - 1]) + BigInt(digits[i])/10n**10000n};
+digits[i] = BigInt(digits[i])%10n**10000n;
+}
+if (digits[0] == 0n) {digits.splice(0, 1);}
+}
+for (i = 1; i < digits.length; i++) {digits[i] = "0".repeat(10000 - String(digits[i]).length) + String(digits[i])}
+result.value = String(digits.join(""));
+}
+if (mode.value == "factorial") {
+function factorials(start, end) {
+fact = 1n;
+for (k = start; k <= end; k++) {fact *= BigInt(k)}
+return String(fact);
+}
+digits = [BigInt(factorials(1, power%25))];
+for (j = 1; j <= BigInt(power)/25n; j++) {
+digits.unshift(0n);
+for (i = 0; i < digits.length; i++) {
+digits[i] *= BigInt(factorials(25 * (j - 1) + power%25 + 1, 25 * j + power%25));
+if (digits[i - 1] != null) {digits[i - 1] = BigInt(digits[i - 1]) + BigInt(digits[i])/10n**10000n};
+digits[i] = BigInt(digits[i])%10n**10000n;
+}
+if (digits[0] == 0n) {digits.splice(0, 1);}
+}
+for (i = 1; i < digits.length; i++) {digits[i] = "0".repeat(10000 - String(digits[i]).length) + String(digits[i])}
+result.value = String(digits.join(""));
+}
+if (mode.value == "fibonacci") {
+function fibonacciIterative(n) {
+if (n > 1000000) {return "Can't calculate Fibonacci value above F(1000000)."} else {
+a = BigInt(0), b = BigInt(1), c = BigInt(1);
+for (i = 2; i <= n; i++) {
+c = a + b; a = b; b = c;
+}
+return c;
+}}
+result.value = String(fibonacciIterative(power));
+}
+digitLength.innerHTML = "Length: " + String(result.value).length + " digit(s)";
+}
+</script></body></html>
