@@ -1,1 +1,66 @@
-javascript:(function()%7Bimperial%20%3D%20prompt(%22Type%20something%20like%20%5C%225%20ft%20to%20m%5C%22%20to%20convert.%22)%3B%0Ametric%20%3D%200%3B%0Aunit%20%3D%20Number(imperial.split(%22%20%22)%5B0%5D)%3B%0Aunits%20%3D%20imperial.split(%22%20%22).slice(1%2C%204).join(%22%20%22)%3B%0Aif%20(units%20%3D%3D%20%22in%20to%20cm%22)%20%7Bmetric%20%3D%20unit%20*%202.54%3B%7D%0Aif%20(units%20%3D%3D%20%22ft%20to%20m%22)%20%7Bmetric%20%3D%20unit%20*%200.3048%3B%7D%0Aif%20(units%20%3D%3D%20%22yd%20to%20m%22)%20%7Bmetric%20%3D%20unit%20*%200.9144%3B%7D%0Aif%20(units%20%3D%3D%20%22mi%20to%20km%22)%20%7Bmetric%20%3D%20unit%20*%201.609344%3B%7D%0Aif%20(units%20%3D%3D%20%22floz%20to%20ml%22)%20%7Bmetric%20%3D%20unit%20*%2029.5735295625%3B%7D%0Aif%20(units%20%3D%3D%20%22cup%20to%20l%22)%20%7Bmetric%20%3D%20unit%20*%200.2365882365%3B%7D%0Aif%20(units%20%3D%3D%20%22gal%20to%20l%22)%20%7Bmetric%20%3D%20unit%20*%203.785411784%3B%7D%0Aif%20(units%20%3D%3D%20%22oz%20to%20g%22)%20%7Bmetric%20%3D%20unit%20*%2028.349523125%3B%7D%0Aif%20(units%20%3D%3D%20%22lb%20to%20kg%22)%20%7Bmetric%20%3D%20unit%20*%200.45359237%3B%7D%0Aif%20(units%20%3D%3D%20%22mph%20to%20m%2Fs%22)%20%7Bmetric%20%3D%20unit%20*%200.44704%3B%7D%0Aif%20(units%20%3D%3D%20%22f%20to%20c%22)%20%7Bmetric%20%3D%20(unit%20-%2032)%20%2F%201.8%3B%7D%0Aalert(String(Number(metric).toPrecision(10)%20*%201)%20%2B%20%22%20%22%20%2B%20imperial.split(%22%20%22)%5B3%5D)%3B%7D)()%3B
+unitPrompt = prompt("Enter an abbreviated conversion statement.");
+units = new Object();
+units.measure = unitPrompt.split(" ")[0];
+if (units.measure.includes("/")) {
+units.measure = String(Number(units.measure.split("/")[0])/Number(units.measure.split("/")[1]));
+}
+units.imperial = unitPrompt.split(" to ")[0].split(" ");
+units.imperial.shift()
+units.imperial = units.imperial.join(" ");
+units.metric = unitPrompt.split(" to ")[1];
+if (units.measure.includes("'")) {
+units.measure = Number(units.measure.split("'")[0]) + Number(units.measure.replace("\"", "").split("'")[1])/12;
+units.imperial = "ft";
+}
+units.conversion;
+units.multiplier;
+if (units.metric == "mm") {units.multiplier = 0.001;}
+if (units.metric == "cm") {units.multiplier = 0.01;}
+if (units.metric == "m") {units.multiplier = 1;}
+if (units.metric == "km") {units.multiplier = 1000;}
+if (units.metric == "mgm") {units.multiplier = 1000000;}
+if (units.imperial == "in") {units.conversion = 0.0254 * Number(units.measure)/units.multiplier}
+if (units.imperial == "ft") {units.conversion = 0.3048 * Number(units.measure)/units.multiplier}
+if (units.imperial == "yd") {units.conversion = 0.9144 * Number(units.measure)/units.multiplier}
+if (units.imperial == "mi") {units.conversion = 1609.344 * Number(units.measure)/units.multiplier}
+if (units.metric == "mg") {units.multiplier = 0.001;}
+if (units.metric == "g") {units.multiplier = 1;}
+if (units.metric == "kg") {units.multiplier = 1000;}
+if (units.metric == "tonne") {units.multiplier = 1000000;}
+if (units.imperial == "oz") {units.conversion = 28.349523125 * Number(units.measure)/units.multiplier}
+if (units.imperial == "lb") {units.conversion = 453.59237 * Number(units.measure)/units.multiplier}
+if (units.imperial == "ton") {units.conversion = 907184.74 * Number(units.measure)/units.multiplier}
+if (units.metric == "m/s") {units.multiplier = 1;}
+if (units.metric == "km/h") {units.multiplier = 3.6;}
+if (units.imperial == "ft/s") {units.conversion = 0.3048 * Number(units.measure)/units.multiplier}
+if (units.imperial == "mi/h") {units.conversion = 0.44704 * Number(units.measure)/units.multiplier}
+if (units.metric == "ml") {units.multiplier = 0.001;}
+if (units.metric == "l") {units.multiplier = 1;}
+if (units.metric == "m3") {units.multiplier = 1000;}
+if (units.imperial == "tsp") {units.conversion = 0.00492892 * Number(units.measure)/units.multiplier}
+if (units.imperial == "tbsp") {units.conversion = 0.01478676478125 * Number(units.measure)/units.multiplier}
+if (units.imperial == "fl oz") {units.conversion = 0.0295735295625 * Number(units.measure)/units.multiplier}
+if (units.imperial == "cup") {units.conversion = 0.2365882365 * Number(units.measure)/units.multiplier}
+if (units.imperial == "pt") {units.conversion = 0.473176473 * Number(units.measure)/units.multiplier}
+if (units.imperial == "qt") {units.conversion = 0.946352946 * Number(units.measure)/units.multiplier}
+if (units.imperial == "gal") {units.conversion = 3.785411784 * Number(units.measure)/units.multiplier}
+if (units.metric == "mm2") {units.multiplier = 0.001**2;}
+if (units.metric == "cm2") {units.multiplier = 0.01**2;}
+if (units.metric == "m2") {units.multiplier = 1**2;}
+if (units.metric == "km2") {units.multiplier = 1000**2;}
+if (units.metric == "mgm2") {units.multiplier = 1000000**2;}
+if (units.imperial == "in2") {units.conversion = 0.0254**2 * Number(units.measure)/units.multiplier}
+if (units.imperial == "ft2") {units.conversion = 0.3048**2 * Number(units.measure)/units.multiplier}
+if (units.imperial == "yd2") {units.conversion = 0.9144**2 * Number(units.measure)/units.multiplier}
+if (units.imperial == "mi2") {units.conversion = 1609.344**2 * Number(units.measure)/units.multiplier}
+if (units.metric == "mbar") {units.multiplier = 0.001;}
+if (units.metric == "bar") {units.multiplier = 1;}
+if (units.imperial == "psi") {units.conversion = 0.068947572931783 * Number(units.measure)/units.multiplier}
+if (units.imperial == "atm") {units.conversion = 1.01325 * Number(units.measure)/units.multiplier}
+if (units.metric == "km/l") {units.multiplier = 1;}
+if (units.imperial == "mi/gal") {units.conversion = 0.42514370743027 * Number(units.measure)/units.multiplier}
+if (units.imperial == "f" && units.metric == "c") {units.conversion = (Number(units.measure) - 32)/1.8}
+if (units.imperial == "f" && units.metric == "k") {units.conversion = (Number(units.measure) - 32)/1.8 + 273.15}
+units.conversion = units.conversion.toPrecision(12) * 1;
+if (isNaN(units.conversion)) {units.conversion = "Can't convert between these units!"}
+alert(String(units.measure) + " " + units.imperial + " is " + String(units.conversion) + " " + units.metric + ".");
