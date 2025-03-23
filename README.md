@@ -4,6 +4,8 @@
 
 Note: X & Y values higher than 170 may not work due to floating point limitations. Inputting very high values uses a lot of computation, so your browser may tell you a script is running too long.
 
+https://htmlpreview.github.io/?https://raw.githubusercontent.com/mcnole25/random-resources/refs/heads/master/combinatorics-calculator.html
+
 # 1000.gif / 1000.png
 
 Files made from MS paint & EZGif to generate my Scratch profile picture.
@@ -43,7 +45,7 @@ The calculator has been tested & bugs have been recently fixed.
 
 Type "e" in an input for Euler's Number. Euler's Number is experimental & may have bugs.
 
-**NOTE: I do not own big.js. The library is fully owned by MikeMcl.**
+**NOTE: I do not own big.js. The library was borrowed by MikeMcl.**
 
 # bfdi-characters.txt
 
@@ -52,3 +54,5 @@ List of contestant names in BFB/TPOT (67 of them) with the failed debuters (24 o
 # big-number.html
 
 The world's fastest big number calculator made in HTML (probably). This tool can calculate large exponents, factorials, & even Fibonacci numbers at lightning speed. Uses the built-in BigInt library, but with no hard-coded memory limit. It can actually calculate faster than native BigInt!
+
+Link: https://htmlpreview.github.io/?https://raw.githubusercontent.com/mcnole25/random-resources/refs/heads/master/big-number.html
