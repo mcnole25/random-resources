@@ -1,6 +1,6 @@
 # Useful Tools
 
-### combinatorics-calculator
+### combinatorics-calculator.html
 
 An HTML file to calculate all possible ways to do stuff like: Choosing x items from a y-set, Number of ways to order x things with y fixed points, etc.
 
