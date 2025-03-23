@@ -48,3 +48,7 @@ Type "e" in an input for Euler's Number. Euler's Number is experimental & may ha
 # bfdi-characters.txt
 
 List of contestant names in BFB/TPOT (67 of them) with the failed debuters (24 of them) & 9 extra characters to make it 100 people in total. Free to use.
+
+# big-number.html
+
+The world's fastest big number calculator made in HTML (probably). This tool can calculate large exponents, factorials, & even Fibonacci numbers at lightning speed. Uses the built-in BigInt library, but with no hard-coded memory limit. It can actually calculate faster than native BigInt!
