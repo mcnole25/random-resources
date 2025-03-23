@@ -16,9 +16,13 @@ Link: https://htmlpreview.github.io/?https://raw.githubusercontent.com/mcnole25/
 
 ### unit-converter-bookmarklet.txt
 
-A bookmarklet for quickly converting US imperial units to metric. Works on Firefox.
+A bookmarklet for quickly converting US imperial units to metric. Convenient for access to "portable conversion". Works on Firefox.
 
-**Accepted syntax: "in to cm", "ft to m", "yd to m", "mi to km", "floz to ml", "cup to l", "gal to l", "oz to g", "lb to kg", "mph to m/s", "f to c"**
+Type in a statement like "50 lb to kg", or "7'6 to cm", or "74 f to c", or "40 mi/h to km/h", etc. Supports 40+ units, even "mgm" for megameters (1000 kilometers).
+
+Your muat type in abbreviated units (like "km" instead of "kilometers") for the converter to work correctly.
+
+To download, use an online bookmarklet converter & paste the raw document.
 
 ### precise-calculator.html
 
