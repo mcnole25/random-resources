@@ -57,6 +57,6 @@ Features:
 
 Just an image of hundreds of 2048 tiles designed by me.
 
-### bfdi-characters.txt
+### bfdi-contestants.txt
 
 List of contestant names in BFB/TPOT (67 of them) with the failed debuters (24 of them) & 9 extra characters to make it 100 people in total. Free to use.
