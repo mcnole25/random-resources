@@ -20,7 +20,7 @@ A bookmarklet for quickly converting US imperial units to metric. Convenient for
 
 Type in a statement like "50 lb to kg", or "7'6 to cm", or "74 f to c", or "40 mi/h to km/h", etc. Supports 40+ units, even "mgm" for megameters (1000 kilometers).
 
-Your muat type in abbreviated units (like "km" instead of "kilometers") for the converter to work correctly.
+Your must type in abbreviated units (like "km" instead of "kilometers") for the converter to work correctly.
 
 To download, use an online bookmarklet converter & paste the raw document.
 
