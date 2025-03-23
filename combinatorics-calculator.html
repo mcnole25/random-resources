@@ -51,16 +51,12 @@ let y = Number(yInput.value);
 let set = [];
 output.value = "";
 if (comb.value == 0) {
-let set = Array(y).fill(1);
 for (i = 0; i < x**y; i++) {
-output.value += set + "\n";
-set[y - 1]++;
-for (j = 1; j < y; j++) {
-if (Number(set[y - j]) > x) {
-set[y - j] = 1;
-set[y - j - 1]++;
+set = [];
+for (j = y - 1; j >= 0; j--) {
+set.push(Math.floor(i/x**j)%x + 1);
 }
-}
+output.value += set.join(",") + "\n";
 }
 output.value = output.value.slice(0, output.value.length - 1);
 count.innerHTML = Math.round(x**y) + " combination(s) generated";
