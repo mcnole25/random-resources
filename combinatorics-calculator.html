@@ -1,7 +1,11 @@
 <!DOCTYPE html>
 <style>
-body, textarea {background-color: #202020; color: #fff;}
-span, div {color: #fff;}
+body, button, input, select, textarea {background-color: #222; color: #fff; font-family: arial;}
+body {overflow: hidden;}
+button {background-color: #0cc; color: #000; position: absolute; left: calc(100% - 75px); width: 75px;}
+h3, textarea {margin: 10px 0px;}
+input {width: 100px;}
+textarea {width: 100%; height: 80vh; resize: none; line-height: 1.5em;}
 </style>
 <span>Generate</span>
 <select id="comb">
@@ -29,7 +33,7 @@ span, div {color: #fff;}
 <input id="yInput" type="number" value=3><br>
 </div>
 <div id="count">Adjust the generation type, X, & Y values, then click Generate.</div>
-<textarea id="output" style="width: 90vw; height: 80vh; resize: none;"></textarea>
+<textarea id="output" readonly=true></textarea>
 <script>
 setInterval(function() {
 if (comb.value == 4 || comb.value == 5 || comb.value == 7 || comb.value == 9 || comb.value == 12) {
@@ -330,6 +334,5 @@ uniquePartitions(n) {
 	this.solve(a, v, n - 1, 0, n);
 	v.reverse();
 	return v;
-}
-}
+}}
 </script>
