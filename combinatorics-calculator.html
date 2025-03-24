@@ -53,14 +53,12 @@ let set = [];
 output.value = "";
 if (comb.value == 0) {
 for (i = 0; i < x**y; i++) {
-current = i.toString(x).split("").toString();
-current = current.replaceAll(9, "#");
-for (j = 8; j >= 0; j--) {current = current.replaceAll(j, j + 1);}
-current = current.replaceAll("#", "10");
-for (j = 11; j <= 36; j++) {current = current.replaceAll(String.fromCharCode(j + 86), j);}
-current = "1,".repeat(y - String(current).split(",").length) + String(current);
-output.value += "{" + current + "}\n";
+output.value += "{" + "0,".repeat(y - i.toString(x).split("").toString().split(",").length) + i.toString(x).split("").toString() + "}\n";
 }
+output.value = output.value.replaceAll(9, "#");
+for (j = 8; j >= 0; j--) {output.value = output.value.replaceAll(j, j + 1);}
+output.value = output.value.replaceAll("#", "10");
+for (j = 11; j <= 36; j++) {output.value = output.value.replaceAll(String.fromCharCode(j + 86), j);}
 output.value = output.value.slice(0, output.value.length - 1);
 count.innerHTML = Math.round(x**y) + " combination(s) generated";
 }
