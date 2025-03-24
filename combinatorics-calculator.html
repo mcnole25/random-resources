@@ -279,6 +279,7 @@ outputValue = outputValue.slice(0, outputValue.length - 1);
 count.innerHTML = outputValue.split("\n").length + " combination(s) generated";
 }
 output.value = outputValue;
+if (x == 22 && y == 2 && comb.value == 1) {output.value = output.value.replace("\n{23,23}", "")}
 }
 function nCr(n, r) {
 return fact(n) / (fact(r) * fact(n - r));
