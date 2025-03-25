@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html><head>
+<title>Partition Generator</title>
+<style>
+body, button, input, select, textarea {background-color: #222; color: #fff; font-family: arial;}
+body {overflow: hidden;}
+button {background-color: #fc0; color: #000; position: absolute; left: calc(100% - 75px); width: 75px;}
+span {margin: 0px 5px;}
+input {width: 100px;}
+select {width: 50px;}
+h3, textarea {margin: 10px 0px;}
+textarea {width: 100%; height: 85vh; resize: none;}
+.checkbox {accent-color: #fc0; width: 25px;}
+</style>
+</head><body>
+<h3>Partition Generator</h3>
+<span>Split the number</span>
+<input id="value">
+<span>into</span>
+<select id="parts">
+<option value=2>2</option>
+<option value=3>3</option>
+<option value=4>4</option>
+<option value=5>5</option>
+<option value=6>6</option>
+</select>
+<span>parts</span><br>
+<input type="checkbox" id="unique" class="checkbox">
+<span>Unique numbers only?</span>
+<span id="partitionLength"></span>
+<button id="searchButton" onclick="generate()">Generate</button><br>
+<textarea id="result" readonly=true></textarea>
+<script>
+collator = new Intl.Collator(undefined, {numeric: true, sensitivity: 'base'});
+function partition2(n) {
+output = [];
+for (i = 1; i < n; i++) {
+current = [i, n - i].sort((a, b) => b - a).join(" + ");
+if (!output.includes(current)) {output.push(current);}
+}
+return output.sort(collator.compare).reverse().join("\n");
+}
+function partition3(n) {
+output = [];
+for (j = 1; j < n; j++) {
+for (i = 1; i < j; i++) {
+current = [i, j - i, n - j].sort((a, b) => b - a).join(" + ");
+if (!output.includes(current)) {output.push(current);}
+}}
+return output.sort(collator.compare).reverse().join("\n");
+}
+function partition4(n) {
+output = [];
+for (k = 1; k < n; k++) {
+for (j = 1; j < k; j++) {
+for (i = 1; i < j; i++) {
+current = [i, j - i, k - j, n - k].sort((a, b) => b - a).join(" + ");
+if (!output.includes(current)) {output.push(current);}
+}}}
+return output.sort(collator.compare).reverse().join("\n");
+}
+function partition5(n) {
+output = [];
+for (l = 1; l < n; l++) {
+for (k = 1; k < l; k++) {
+for (j = 1; j < k; j++) {
+for (i = 1; i < j; i++) {
+current = [i, j - i, k - j, l - k, n - l].sort((a, b) => b - a).join(" + ");
+if (!output.includes(current)) {output.push(current);}
+}}}}
+return output.sort(collator.compare).reverse().join("\n");
+}
+function partition6(n) {
+output = [];
+for (m = 1; m < n; m++) {
+for (l = 1; l < m; l++) {
+for (k = 1; k < l; k++) {
+for (j = 1; j < k; j++) {
+for (i = 1; i < j; i++) {
+current = [i, j - i, k - j, l - k, m - l, n - m].sort((a, b) => b - a).join(" + ");
+if (!output.includes(current)) {output.push(current);}
+}}}}}
+return output.sort(collator.compare).reverse().join("\n");
+}
+function generate() {
+if (parts.value == 2) {result.value = partition2(Number(value.value));}
+if (parts.value == 3) {result.value = partition3(Number(value.value));}
+if (parts.value == 4) {result.value = partition4(Number(value.value));}
+if (parts.value == 5) {result.value = partition5(Number(value.value));}
+if (parts.value == 6) {result.value = partition6(Number(value.value));}
+if (unique.checked) {
+distinct = [];
+for (z = 0; z < result.value.split("\n").length; z++) {
+item = result.value.split("\n")[z].split(" + ");
+if (item.toString() == [...new Set(item)].toString()) {
+distinct.push(item.join(" + "));
+}}
+result.value = distinct.join("\n");
+}
+partitionLength.innerHTML = result.value.split("\n").length + " partition(s) generated";
+}
+</script>
+</body></html>
