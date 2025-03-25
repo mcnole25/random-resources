@@ -28,7 +28,7 @@ textarea {width: 100%; height: 85vh; resize: none; line-height: 1.5em;}
 <input type="number" id="choices" value=3>
 <button onclick="generate()">Generate</button><br>
 <span id="outLength">Note: A high number of options or choices demand lots of computation, so be careful when using this tool.</span>
-<textarea id="out"></textarea>
+<textarea id="out" readonly=true></textarea>
 <script>
 function generate() {
 x = Number(options.value);
