@@ -2,9 +2,9 @@
 
 ### combinatorics-calculator.html
 
-An HTML file to calculate all possible ways to do stuff like: Choosing x items from a y-set, Number of ways to order x things with y fixed points, etc.
+An HTML file to calculate all possible permutations, combinations, partitions, & even subsets (power sets).
 
-Note: X & Y values higher than 170 may not work due to floating point limitations. Inputting very high values uses a lot of computation, so your browser may tell you a script is running too long.
+Powered by the open source library combinatorics.js by @dankogai.
 
 Link: https://htmlpreview.github.io/?https://raw.githubusercontent.com/mcnole25/random-resources/refs/heads/master/combinatorics-calculator.html
 
