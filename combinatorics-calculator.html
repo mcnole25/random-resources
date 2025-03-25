@@ -36,34 +36,42 @@ y = Number(choices.value);
 mode = Number(genType.value);
 output = [];
 total = 0;
-if (mode > 3) {x = x - y + 1;}
-if (mode == 0) {total = x**y;}
-if (mode == 1 || mode == 4) {total = nCr(x + y - 1, y, false);}
-if (mode == 2) {total = nCr(x, y, true);}
-if (mode == 3 || mode == 5) {total = nCr(x, y, false);}
-
+if (mode == 0) {total = x**y}
+if (mode == 1) {total = nCr(x + y - 1, y, false)}
+if (mode == 2) {total = nCr(x, y, true)}
+if (mode == 3) {total = nCr(x, y, false)}
+if (mode < 4) {
 while (output.length < total) {
 set = Array.from({length: x}, (_, i) => i + 1);
 comb = [];
 for (i = 0; i < y; i++) {
 random = set[Math.floor(Math.random() * set.length)];
 comb.push(random);
-if (mode == 2 || mode == 3 || mode == 5) {
+if (mode == 2 || mode == 3) {
 index = set.indexOf(random);
-if (index > -1) {set.splice(index, 1);}
-}
-if (mode == 1 || mode > 2) {comb.sort(function (a, b) {return a - b;})}
-}
-if (!output.includes(comb.toString())) {output.push(comb.toString());}
-}
-if (mode > 3) {
-sums = [];
-for (i = 0; i < output.length; i++) {
-currentSum = output[i].split(",").reduce((partialSum, a) => Number(partialSum) + Number(a), 0);
-if (currentSum == x + y - 1) {
-sums.push(output[i].split(",").reverse().join("+"));
+if (index > -1) {set.splice(index, 1)}
 }}
-output = sums;
+if (mode == 1 || mode > 2) {comb.sort(function (a, b) {return a - b})}
+if (!output.includes(comb.toString())) {output.push(comb.toString())}
+}} else {
+for (j = 0; j < nCr(x + y - 1, y, false) * 50; j++) {
+set = Array.from({length: x}, (_, i) => i + 1);
+leftover = x;
+comb = [];
+for (i = 0; i < y; i++) {
+random = set[Math.floor(Math.sqrt(Math.random()) * set.length)];
+comb.push(random);
+comb.sort(function (a, b) {return b - a});
+leftover -= random;
+if (mode == 5) {
+index = set.indexOf(random);
+if (index > -1) {set.splice(index, 1)}
+}
+set = set.filter(a => a <= leftover);
+set = set.filter(a => a <= random);
+}
+if (!output.includes(comb.join("+")) && !comb.includes(undefined) && comb.reduce((partialSum, a) => Number(partialSum) + Number(a), 0) == x) {output.push(comb.join("+"))}
+}
 }
 collator = new Intl.Collator(undefined, {numeric: true, sensitivity: 'base'});
 outLength.innerHTML = output.length + " combination(s) generated";
