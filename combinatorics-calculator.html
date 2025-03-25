@@ -7,82 +7,103 @@ body, button, input, select, textarea {background-color: #222; color: #fff; font
 body {overflow: hidden;}
 button {background-color: #0cc; color: #000; position: absolute; left: calc(100% - 75px); width: 75px;}
 h3, textarea {margin: 10px 0px;}
-input {width: 100px;}
-textarea {width: 100%; height: 85vh; resize: none; line-height: 1.5em;}
+input {width: 75px;}
+select {width: 125px;}
+textarea {width: 100%; height: 80vh; resize: none; line-height: 1.5em;}
+.checkbox {accent-color: #0cc; width: 25px;}
 </style>
 </head>
 <body>
 <h3>Combinatorics Generator</h3>
 <span>Generation type:</span>
-<select id="genType">
-<option value=0>Repeated permutations</option>
-<option value=1>Repeated combinations</option>
-<option value=2>Permutations</option>
-<option value=3>Combinations</option>
-<option value=4>Partitions into N parts</option>
-<option value=5>Partitions into N distinct parts</option>
+<select id="type">
+<option value=0>Permutations</option>
+<option value=1>Combinations</option>
+<option value=2>Partitions</option>
 </select>
+<span>Repeated terms?</span>
+<input type="checkbox" id="repeats" class="checkbox" checked=true>
 <span>Options:</span>
-<input type="number" id="options" value=7>
+<input id="options" type="number" value=7>
+<div id="hideOptions" style="display: inline; visiblity: visible;">
 <span>Choices:</span>
-<input type="number" id="choices" value=3>
-<button onclick="generate()">Generate</button><br>
-<span id="outLength">Note: A high number of options or choices demand lots of computation, so be careful when using this tool.</span>
+<input id="choices" type="number" value=3>
+</div>
+<button id="button">Generate</button><br>
+<div id="powerSet" style="display: none; visiblity: hidden;">
+<span>Any number of choices instead of fixed number?</span>
+<input type="checkbox" id="power" class="checkbox">
+</div>
 <textarea id="out" readonly=true></textarea>
-<script>
-function generate() {
-x = Number(options.value);
-y = Number(choices.value);
-mode = Number(genType.value);
-output = [];
-total = 0;
-if (mode == 0) {total = x**y}
-if (mode == 1) {total = nCr(x + y - 1, y, false)}
-if (mode == 2) {total = nCr(x, y, true)}
-if (mode == 3) {total = nCr(x, y, false)}
-if (mode < 4) {
-while (output.length < total) {
-set = Array.from({length: x}, (_, i) => i + 1);
-comb = [];
-for (i = 0; i < y; i++) {
-random = set[Math.floor(Math.random() * set.length)];
-comb.push(random);
-if (mode == 2 || mode == 3) {
-index = set.indexOf(random);
-if (index > -1) {set.splice(index, 1)}
+<span id="outLength"></span>
+<script type="module">
+import * as $C from "https://raw.githack.com/dankogai/js-combinatorics/main/combinatorics.js";
+window.Combinatorics = $C;
+button.addEventListener('click', event => {
+var GENERATED_LIST = [];
+if (Number(type.value) == 1 && (!repeats.checked) && power.checked) {
+for (let ii = 1; ii <= Number(options.value); ii++) {
+GENERATED_LIST += "\n" + String(generate(Number(options.value), ii, false, 1));
+}
+if (Number(options.value) == 0) {GENERATED_LIST = "";}
+} else {
+GENERATED_LIST = String(generate(Number(options.value), Number(choices.value), repeats.checked, Number(type.value)));
+}
+out.value = GENERATED_LIST;
+outLength.innerHTML = GENERATED_LIST.split("\n").length + " combination(s) generated";
+});
+function generate(nFixed, k, rep, mode) {
+var output = [];
+var n = (mode == 2) ? nFixed - k + 1 : nFixed;
+if (n > 0 && k > 0) {
+if (rep) {
+for (let i = 0; i < n**k; i++) {
+if (mode > 0) {
+for (let j = k - 1; j > 0; j--) {
+if (i % n**j == 0) {i += Math.floor(i/n**j) % n * n**(j - 1);}
 }}
-if (mode == 1 || mode > 2) {comb.sort(function (a, b) {return a - b})}
-if (!output.includes(comb.toString())) {output.push(comb.toString())}
-}} else {
-for (j = 0; j < nCr(x + y - 1, y, false) * 50; j++) {
-set = Array.from({length: x}, (_, i) => i + 1);
-leftover = x;
-comb = [];
-for (i = 0; i < y; i++) {
-random = set[Math.floor(Math.sqrt(Math.random()) * set.length)];
-comb.push(random);
-comb.sort(function (a, b) {return b - a});
-leftover -= random;
-if (mode == 5) {
-index = set.indexOf(random);
-if (index > -1) {set.splice(index, 1)}
+var current = toBase(i, n, Array.from({length: n}, (_, i) => i + 1));
+current = "1,".repeat(k - String(current).split(",").length) + String(current);
+if ((mode < 2) || mode == 2 && String(current).split(",").reduce((a, b) => Number(a) + Number(b)) == n + k - 1) {output.push(current);}
 }
-set = set.filter(a => a <= leftover);
-set = set.filter(a => a <= random);
+return output.join("\n");
+} else {
+if (n >= k) {
+if (mode > 0) {
+output = new Combinatorics.Combination(Array.from({length: n}, (_, i) => i + 1), k);
+} else {
+output = new Combinatorics.Permutation(Array.from({length: n}, (_, i) => i + 1), k);
 }
-if (!output.includes(comb.join("+")) && !comb.includes(undefined) && comb.reduce((partialSum, a) => Number(partialSum) + Number(a), 0) == x) {output.push(comb.join("+"))}
+if (mode == 2) {
+output = [...output].filter(z => z.reduce((a, b) => Number(a) + Number(b)) == n + k - 1);
 }
-}
-collator = new Intl.Collator(undefined, {numeric: true, sensitivity: 'base'});
-outLength.innerHTML = output.length + " combination(s) generated";
-out.value = output.sort(collator.compare).join("\n");
-function nCr(a, b, nPr) {
-let aa = 1;
-for (ii = a; ii > a - b; ii--) {aa *= ii;}
-let bb = 1;
-for (ii = 1; ii <= b; ii++) {bb *= ii;}
-if (nPr) {return aa} else {return aa/bb};
+return [...output].join("\n");
+} else {
+return "Not enough options to generate output without repeats.";
+}}} else {
+return "Input values must be positive integers.";
 }}
+function toBase(number, radix, digits) {
+radix = radix || 10;
+digits = digits || "0123456789abcdefghijklmnopqrstuvwxyz".split("").slice(0, radix);
+if (radix > digits.length) {
+var msg = "Not enough digits to represent the number '" + number + "' in base " + radix;
+throw Error(msg);
+}
+if (number == 0) return digits[0];
+var a = []
+while (number) {
+a.splice(0, 0, digits[number % radix])
+number = parseInt(number/radix);
+}
+return a.toString();
+}
+setInterval(function() {
+powerSet.style.display = (Number(type.value) == 1 && !repeats.checked) ? "inline" : "none";
+powerSet.style.visibility = (Number(type.value) == 1 && !repeats.checked) ? "visible" : "hidden";
+hideOptions.style.display = (Number(type.value) == 1 && (!repeats.checked) && power.checked) ? "none" : "inline";
+hideOptions.style.visibility = (Number(type.value) == 1 && (!repeats.checked) && power.checked) ? "hidden" : "visible";
+});
 </script>
 </body>
 </html>
