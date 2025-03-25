@@ -6,6 +6,12 @@ The world's fastest big number calculator made in HTML (probably). This tool can
 
 Link: https://htmlpreview.github.io/?https://raw.githubusercontent.com/mcnole25/random-resources/refs/heads/master/big-number.html
 
+### partition-generator.html
+
+A simple fast generator for creating all the possible ways of breaking up a positive integer into 2-6 parts. You can also filter for unique numbers only. Uses nested loops to generate partitions.
+
+Link: https://htmlpreview.github.io/?https://raw.githubusercontent.com/mcnole25/random-resources/refs/heads/master/partition-generator.html
+
 ### unit-converter-bookmarklet.txt
 
 A bookmarklet for quickly converting US imperial units to metric. Convenient for access to "portable conversion". Works on Firefox.
