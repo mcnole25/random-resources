@@ -1,11 +1,5 @@
 # Useful Tools
 
-### combinatorics-calculator.html
-
-MOVED: https://mcnole25.github.io/combinatorics-generator.html
-
-This file is only kept here for compatibility reasons.
-
 ### big-number.html
 
 The world's fastest big number calculator made in HTML (probably). This tool can calculate large exponents, factorials, & even Fibonacci numbers at lightning speed. Uses the built-in BigInt library, but with no hard-coded memory limit. It can actually calculate faster than native BigInt!
