@@ -2,11 +2,9 @@
 
 ### combinatorics-calculator.html
 
-An HTML file to calculate all possible permutations, combinations, partitions, & even subsets (power sets).
+MOVED: https://mcnole25.github.io/combinatorics-generator.html
 
-Powered by the open source library combinatorics.js by @dankogai.
-
-Link: https://htmlpreview.github.io/?https://raw.githubusercontent.com/mcnole25/random-resources/refs/heads/master/combinatorics-calculator.html
+This file is only kept here for compatibility reasons.
 
 ### big-number.html
 
