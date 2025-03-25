@@ -24,11 +24,11 @@ textarea {width: 100%; height: 85vh; resize: none;}
 <option value=5>5</option>
 <option value=6>6</option>
 </select>
-<span>parts</span><br>
+<span>parts</span>
+<button id="searchButton" onclick="generate()">Generate</button><br>
 <input type="checkbox" id="unique" class="checkbox">
 <span>Unique numbers only?</span>
 <span id="partitionLength"></span>
-<button id="searchButton" onclick="generate()">Generate</button><br>
 <textarea id="result" readonly=true></textarea>
 <script>
 collator = new Intl.Collator(undefined, {numeric: true, sensitivity: 'base'});
