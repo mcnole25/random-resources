@@ -23,18 +23,21 @@ textarea {width: 100%; height: 85vh; resize: none;}
 <option value=4>4</option>
 <option value=5>5</option>
 <option value=6>6</option>
+<option value=7>7</option>
 </select>
 <span>parts</span>
 <button id="searchButton" onclick="generate()">Generate</button><br>
 <input type="checkbox" id="unique" class="checkbox">
 <span>Unique numbers only?</span>
+<input type="checkbox" id="zeros" class="checkbox" checked=true>
+<span>Exclude 0?</span>
 <span id="partitionLength"></span>
 <textarea id="result" readonly=true></textarea>
 <script>
 collator = new Intl.Collator(undefined, {numeric: true, sensitivity: 'base'});
 function partition2(n) {
 output = [];
-for (i = 1; i < n; i++) {
+for (i = 1 - exclude0; i < n; i++) {
 current = [i, n - i].sort((a, b) => b - a).join(" + ");
 if (!output.includes(current)) {output.push(current);}
 }
@@ -42,8 +45,8 @@ return output.sort(collator.compare).reverse().join("\n");
 }
 function partition3(n) {
 output = [];
-for (j = 1; j < n; j++) {
-for (i = 1; i < j; i++) {
+for (j = 1 - exclude0; j < n; j++) {
+for (i = 1 - exclude0; i < j + exclude0; i++) {
 current = [i, j - i, n - j].sort((a, b) => b - a).join(" + ");
 if (!output.includes(current)) {output.push(current);}
 }}
@@ -51,9 +54,9 @@ return output.sort(collator.compare).reverse().join("\n");
 }
 function partition4(n) {
 output = [];
-for (k = 1; k < n; k++) {
-for (j = 1; j < k; j++) {
-for (i = 1; i < j; i++) {
+for (k = 1 - exclude0; k < n; k++) {
+for (j = 1 - exclude0; j < k + exclude0; j++) {
+for (i = 1 - exclude0; i < j + exclude0; i++) {
 current = [i, j - i, k - j, n - k].sort((a, b) => b - a).join(" + ");
 if (!output.includes(current)) {output.push(current);}
 }}}
@@ -61,10 +64,10 @@ return output.sort(collator.compare).reverse().join("\n");
 }
 function partition5(n) {
 output = [];
-for (l = 1; l < n; l++) {
-for (k = 1; k < l; k++) {
-for (j = 1; j < k; j++) {
-for (i = 1; i < j; i++) {
+for (l = 1 - exclude0; l < n; l++) {
+for (k = 1 - exclude0; k < l + exclude0; k++) {
+for (j = 1 - exclude0; j < k + exclude0; j++) {
+for (i = 1 - exclude0; i < j + exclude0; i++) {
 current = [i, j - i, k - j, l - k, n - l].sort((a, b) => b - a).join(" + ");
 if (!output.includes(current)) {output.push(current);}
 }}}}
@@ -72,22 +75,37 @@ return output.sort(collator.compare).reverse().join("\n");
 }
 function partition6(n) {
 output = [];
-for (m = 1; m < n; m++) {
-for (l = 1; l < m; l++) {
-for (k = 1; k < l; k++) {
-for (j = 1; j < k; j++) {
-for (i = 1; i < j; i++) {
+for (m = 1 - exclude0; m < n; m++) {
+for (l = 1 - exclude0; l < m + exclude0; l++) {
+for (k = 1 - exclude0; k < l + exclude0; k++) {
+for (j = 1 - exclude0; j < k + exclude0; j++) {
+for (i = 1 - exclude0; i < j + exclude0; i++) {
 current = [i, j - i, k - j, l - k, m - l, n - m].sort((a, b) => b - a).join(" + ");
 if (!output.includes(current)) {output.push(current);}
 }}}}}
 return output.sort(collator.compare).reverse().join("\n");
 }
+function partition7(n) {
+output = [];
+for (mm = 1 - exclude0; mm < n; mm++) {
+for (m = 1 - exclude0; m < mm + exclude0; m++) {
+for (l = 1 - exclude0; l < m + exclude0; l++) {
+for (k = 1 - exclude0; k < l + exclude0; k++) {
+for (j = 1 - exclude0; j < k + exclude0; j++) {
+for (i = 1 - exclude0; i < j + exclude0; i++) {
+current = [i, j - i, k - j, l - k, m - l, mm - m, n - mm].sort((a, b) => b - a).join(" + ");
+if (!output.includes(current)) {output.push(current);}
+}}}}}}
+return output.sort(collator.compare).reverse().join("\n");
+}
 function generate() {
+exclude0 = Number(!zeros.checked);
 if (parts.value == 2) {result.value = partition2(Number(value.value));}
 if (parts.value == 3) {result.value = partition3(Number(value.value));}
 if (parts.value == 4) {result.value = partition4(Number(value.value));}
 if (parts.value == 5) {result.value = partition5(Number(value.value));}
 if (parts.value == 6) {result.value = partition6(Number(value.value));}
+if (parts.value == 7) {result.value = partition7(Number(value.value));}
 if (unique.checked) {
 distinct = [];
 for (z = 0; z < result.value.split("\n").length; z++) {
