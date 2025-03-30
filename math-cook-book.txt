@@ -139,7 +139,7 @@ Example: 5.2 : 1 is 5.2x of something out of every x.
 
 - Money -
 
-While money technically doesn't appear in pure math, it appears very often in adult life with it's own vast subject.
+While money technically doesn't appear in pure math, it appears very often in adult life with its own vast subject.
 
 It is like a real number, except it only has 2 decimal places for cents. Negative numbers represent debt.
 
