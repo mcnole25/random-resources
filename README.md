@@ -62,3 +62,11 @@ Just an image of hundreds of 2048 tiles designed by me.
 ### bfdi-contestants.txt
 
 List of contestant names in BFB/TPOT (67 of them) with the failed debuters (24 of them) & 9 extra characters to make it 100 people in total. Free to use.
+
+### math-cook-book.txt
+
+A hand crafted text article for references to common math definitions, including algebra, number theory, & more.
+
+This can be useful as a refresher to how math works.
+
+Link: https://raw.githubusercontent.com/mcnole25/random-resources/refs/heads/master/math-cook-book.txt
