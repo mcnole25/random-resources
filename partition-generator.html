@@ -28,10 +28,10 @@ textarea {width: 100%; height: 85vh; resize: none;}
 <span>parts</span>
 <button id="searchButton" onclick="generate()">Generate</button><br>
 <input type="checkbox" id="unique" class="checkbox">
-<input type="checkbox" id="zeros" class="checkbox" checked=true>
 <span>Unique numbers only?</span>
-<span id="partitionLength"></span>
+<input type="checkbox" id="zeros" class="checkbox" checked=true>
 <span>Exclude 0?</span>
+<span id="partitionLength"></span>
 <textarea id="result" readonly=true></textarea>
 <script>
 collator = new Intl.Collator(undefined, {numeric: true, sensitivity: 'base'});
