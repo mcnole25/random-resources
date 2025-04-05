@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html><head>
+<title>Time Converter</title>
+<style>
+body {background-color: #222; color: #fff; font-family: arial;}
+body {overflow: hidden;}
+button {background-color: #fc0; color: #000; position: absolute; left: calc(100% - 75px); width: 75px;}
+h3 {margin: 10px 0px;}
+#timeDisplay {font-size: 80px; font-weight: bold; float: right; position: relative; bottom: 30px; text-align: right; position: relative; left: 4px;}
+#timeInput {-webkit-appearance: none; width: 87.5%; height: 25px; background: linear-gradient(to right, #009, #ff9, #009);}
+#timeInput::-moz-range-thumb {-webkit-appearance: none; width: 25px; height: 25px; background: #fff;}
+table {white-space: nowrap;}
+tr {font-size: 0px; display: inline; margin: 2px; position: relative; right: 2px;}
+td {font-size: 16px; width: 6.18vw; height: 150px; border: 1px solid; display: inline-block; white-space: normal; word-wrap: break-word; text-align: center; vertical-align: middle;}
+.clocks {font-size: 35px; width: 18vw; line-height: 150px;}
+</style>
+</head><body>
+<h3>Time Converter</h3>
+<input type="range" id="timeInput" min=0 max=1439 value=1008>
+<span id="timeDisplay"></span>
+<div style="display: block; margin: 50px 0px;"></div>
+<table>
+<tr>
+<td>12 Hour Time (AM/PM)</td>
+<td id="clock1" class="clocks"></td>
+</tr>
+<tr>
+<td>Minutes Past/To</td>
+<td id="clock2" class="clocks"></td>
+</tr>
+<tr>
+<td>Time To Midnight</td>
+<td id="clock3" class="clocks"></td>
+</tr>
+<tr>
+<td>Minutes Elapsed</td>
+<td id="clock4" class="clocks"></td>
+</tr>
+</table>
+<table>
+<tr>
+<td>Day Percentage</td>
+<td id="clock5" class="clocks"></td>
+</tr>
+<tr>
+<td>Decimal Time</td>
+<td id="clock6" class="clocks"></td>
+</tr>
+<tr>
+<td>12 Hours, 120 Minutes</td>
+<td id="clock7" class="clocks"></td>
+</tr>
+<tr>
+<td>48 Hours, 30 Minutes</td>
+<td id="clock8" class="clocks"></td>
+</tr>
+</table>
+<table>
+<tr>
+<td>96 Hours, 15 Minutes</td>
+<td id="clock9" class="clocks"></td>
+</tr>
+<tr>
+<td>40-Even</td>
+<td id="clock10" class="clocks"></td>
+</tr>
+<tr>
+<td>Noon-Relative</td>
+<td id="clock11" class="clocks"></td>
+</tr>
+<tr>
+<td>Time To Next Hour</td>
+<td id="clock12" class="clocks"></td>
+</tr>
+</table>
+<table>
+<tr>
+<td>Ticks (Minecraft)</td>
+<td id="clock13" class="clocks"></td>
+</tr>
+<tr>
+<td>Split Into 3's (Sleep/Work/Leisure)</td>
+<td id="clock14" class="clocks"></td>
+</tr>
+<tr>
+<td>Split Into 4's</td>
+<td id="clock15" class="clocks"></td>
+</tr>
+<tr>
+<td>10,12,12 Distribution</td>
+<td id="clock16" class="clocks"></td>
+</tr>
+</table>
+<table>
+<tr>
+<td>Squared Time</td>
+<td id="clock17" class="clocks"></td>
+</tr>
+<tr>
+<td>Square Root Time</td>
+<td id="clock18" class="clocks"></td>
+</tr>
+<tr>
+<td>Binary Coded</td>
+<td id="clock19" class="clocks"></td>
+</tr>
+<tr>
+<td>Clock Degrees</td>
+<td id="clock20" class="clocks"></td>
+</tr>
+</table>
+<script>
+setInterval(function() {
+time = Number(timeInput.value);
+timeDisplay.innerHTML = padZeros(Math.floor(time/60) % 24, 2) + ":" + padZeros(time % 60, 2);
+clock1.innerHTML = Math.floor(time/60 + 11) % 12 + 1 + ":" + padZeros(time % 60, 2) + (time >= 720 ? " PM" : " AM");
+clock2.innerHTML =  ((time % 60 == 0) ? "" : (Math.abs((time + 30) % 60 - 30) + (time % 60 > 30 ? " to " : " past "))) + (Math.round(time/60 + 10.99999) % 12 + 1) + (time > 690 && time <= 1410 ? " PM" : " AM");
+clock3.innerHTML = padZeros(Math.floor((1440 - time)/60) % 24, 2) + ":" + padZeros((1440 - time) % 60, 2);
+clock4.innerHTML = padZeros(time, 4);
+clock5.innerHTML = Math.floor(time/1.44)/10 + "%";
+clock6.innerHTML = Math.floor(time/144) % 10 + ":" + padZeros(Math.floor(time/1.44) % 100, 2);
+clock7.innerHTML = padZeros(Math.floor(time/120) % 12, 2) + ":" + padZeros(time % 120, 3);
+clock8.innerHTML = padZeros(Math.floor(time/30) % 48, 2) + ":" + padZeros(time % 30, 2);
+clock9.innerHTML = padZeros(Math.floor(time/15) % 96, 2) + ":" + padZeros(time % 15, 2);
+clock10.innerHTML = padZeros(Math.floor((time * 10/9)/40) % 40, 2) + ":" + padZeros(Math.floor(time * 10/9) % 40, 2);
+clock11.innerHTML = (time > 720 ? "+" : (time < 720 ? "-" : "")) + Math.floor(Math.abs(time - 720)/60) % 24 + ":" + padZeros(Math.abs(time - 720) % 60, 2);
+clock12.innerHTML = 60 - (time % 60) + Math.ceil((time % 60)/60 - 1) * 60 + " to " + padZeros(Math.ceil(time/60) % 24, 2) + ":00";
+clock13.innerHTML = Math.floor((time + 1080) % 1440 * 50/3);
+clock14.innerHTML = Math.floor(time/60 + 7) % 8 + 1 + ":" + padZeros(time % 60, 2) + (time >= 480 ? (time >= 960 ? " L" : " W") : " S");
+clock15.innerHTML = Math.floor(time/60 + 5) % 6 + 1 + ":" + padZeros(time % 60, 2) + (time >= 360 ? (time >= 720 ? (time >= 1080 ? " PPM" : " APM") : " PAM") : " AAM");
+clock16.innerHTML = Math.floor(time/144) % 10 + ":" + padZeros(Math.floor(time/12) % 12, 2) + ":" + padZeros(time % 12, 2);
+clock17.innerHTML = padZeros(Math.floor((time**2/1440)/60) % 24, 2) + ":" + padZeros(Math.floor(time**2/1440) % 60, 2);
+clock18.innerHTML = padZeros(Math.floor(Math.sqrt(time * 1440)/60) % 24, 2) + ":" + padZeros(Math.floor(Math.sqrt(time * 1440)) % 60, 2);
+clock19.innerHTML = padZeros((Math.floor(time/60) % 24).toString(2), 5) + " " + padZeros((time % 60).toString(2), 6);
+clock20.innerHTML = Math.floor(time/2) % 360 + "\u00b0 " + time * 6 % 360 + "\u00b0" + (time >= 720 ? " PM" : " AM");
+});
+function padZeros(x, length) {
+return "0".repeat(length - String(x).length) + String(x);
+}
+</script>
+</body></html>
