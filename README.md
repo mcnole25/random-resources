@@ -34,6 +34,12 @@ Type "e" in an input for Euler's Number. Euler's Number is experimental & may ha
 
 **NOTE: I do not own big.js. The library was borrowed by MikeMcl.**
 
+### time-converter.html
+
+There are many different ways to show the time, so I made a time converter to display different ways of measuring time (binary coded, noon relative, decimal time, etc.) with a slider.
+
+Note: This tool looks best on a 1080p display.
+
 # Random Stuff
 
 ### 1000.gif / 1000.png
