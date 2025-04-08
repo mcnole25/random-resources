@@ -428,13 +428,10 @@ Examples: ceil(3.2) = 4, ceil(-4.1) = -4, ceil(10) = 10
 
 - Round -
 
-The round function rounds a number to the nearest integer, depending on the decimals.
+The round function rounds a number to the nearest integer, depending on the decimals. Follow the rule below:
 
-Look at the 1st decimal place & follow the rule:
-
-0, 1, 2, 3, 4 --> round down
-
-5, 6, 7, 8, 9 --> round up
+* Round down if 0, 1, 2, 3, 4.
+* Round up if 5, 6, 7, 8, 9.
 
 Examples: round(2.49) = 2, round(2.5) = 3, round(2.51) = 3
 
