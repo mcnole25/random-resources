@@ -252,6 +252,14 @@ The function (   ) is the number of ways to choose k items from a set of n total
 Example: (   ) = 10
            3
 
+- Permutations -
+
+The function nPr(n, k) is the number of ways to choose & reorder k items from a set of n total items. Nonnegative integers only.
+                                n
+Order matters, so nPr(n, k) = (   ) * n!
+                                k
+Example: nPr(16, 3) = 3360
+
 - Greatest Common Factor -
 
 The greatest common factor between 2 numbers gcf(n, k) is the biggest number that both inputs are divisible by. Positive integers only.
@@ -421,10 +429,12 @@ Examples: ceil(3.2) = 4, ceil(-4.1) = -4, ceil(10) = 10
 - Round -
 
 The round function rounds a number to the nearest integer, depending on the decimals.
+
 Look at the 1st decimal place & follow the rule:
 
-0,1,2,3,4 --> round down
-5,6,7,8,9 --> round up
+0, 1, 2, 3, 4 --> round down
+
+5, 6, 7, 8, 9 --> round up
 
 Examples: round(2.49) = 2, round(2.5) = 3, round(2.51) = 3
 
@@ -438,7 +448,7 @@ Honorable mentions: Percentages, degrees, logarithms, & factorials.
 
 All numbers use 14 symbols: {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, -, ., ---, …}
 
-There are currently 50 definitions in the cook book.
+There are currently 51 definitions in the cook book.
 
 We have many tools in algebra, number theory, set theory, calculus, & more.
 
