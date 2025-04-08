@@ -176,6 +176,7 @@ Examples: 3.1415926…, -9999.8888888…, 7.12345679012…
 The expansion 0.4444… is normally assumed to be 4/9.
 
 But it can even be 0.44448975849…, or 0.4444333344443333…, or expand to anything.
+
 It is a good idea to give context, so people know exactly what constant you're talking about.
 
 - Coordinates -
