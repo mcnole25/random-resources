@@ -392,14 +392,53 @@ Examples: median([4, 5, 9, 13, 20]) = 9, median([11.2, 11.46, 12.01, 12.56]) = 1
 
 
 
+# MODULAR ARITHMETIC #
+
+- Modulus (mod) -
+
+The modulus of a value returns the remainder of a division expression, where numbers wrap around.
+
+Examples: 5 mod 6 = 5, 10 mod 3 = 1, -5 mod 14 = 9
+
+- Congruence -
+
+The congruence symbol looks like an equals sign with 3 lines. It is used to show offsets in number divisibility.
+
+Examples: 9 ≡ 0 mod 3, 44 ≡ 4 mod 10
+
+- Floor -
+
+The floor function rounds a number down to the last integer, towards negative infinity.
+
+Examples: floor(3.2) = 3, floor(-4.1) = -5, floor(10) = 10
+
+- Ceiling -
+
+The ceil function rounds a number up to the next integer, towards positive infinity.
+
+Examples: ceil(3.2) = 4, ceil(-4.1) = -4, ceil(10) = 10
+
+- Round -
+
+The round function rounds a number to the nearest integer, depending on the decimals.
+Look at the 1st decimal place & follow the rule:
+
+0,1,2,3,4 --> round down
+5,6,7,8,9 --> round up
+
+Examples: round(2.49) = 2, round(2.5) = 3, round(2.51) = 3
+
+
+
 # CONCLUSION #
-                                     x     _
-The 6 basic operations are +, -, *, ---, ʸ√x, xʸ. Numbers & expressions are the basis of math.
-                                     y
+                                         _
+The 6 basic operations are +, -, *, /, ʸ√x, xʸ. Numbers & expressions are the basis of math.
+
+Honorable mentions: Percentages, degrees, logarithms, & factorials.
 
 All numbers use 14 symbols: {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, -, ., ---, …}
 
-There are currently 45 definitions in the cook book.
+There are currently 50 definitions in the cook book.
 
 We have many tools in algebra, number theory, set theory, calculus, & more.
 
