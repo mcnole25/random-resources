@@ -365,6 +365,18 @@ Example: lim   -------- = 2
 Example: lim   1 - --- = 1
         x -> ∞      x
 
+- Lambert W -
+
+The Lambert W function is defined as the inverse of the function: f(x) = x * eˣ.
+
+It is the most unique function in algebra, as you can't get exact values from this function via any roots, logarithms, or trigonometric functions.
+
+This can help us solve mysterious equations involving exponents combined with addition or multiplication.
+
+Example: solving the equation x * eˣ = 4
+
+W(4) = 1.2021678731…
+
 
 
 # DATA #
@@ -446,7 +458,7 @@ Honorable mentions: Percentages, degrees, logarithms, & factorials.
 
 All numbers use 14 symbols: {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, -, ., ---, …}
 
-There are currently 51 definitions in the cook book.
+There are currently 52 definitions in the cook book.
 
 We have many tools in algebra, number theory, set theory, calculus, & more.
 
