@@ -165,3 +165,16 @@ Examples:
 2√(2) --> √(2² * 2) --> √(4 * 2) --> √(8) --> 2.8284271247...
 5∛(10) --> ∛(5³ * 10) --> ∛(125 * 10) --> ∛(1250) --> 10.7721734501...
 √(3)/2 --> √(3/2²) --> √(3/4) --> √(0.75) --> 0.8660254037...
+
+-- Mixed Fraction Conversion --
+
+A fraction is a ratio of 2 integers.
+
+To convert an improper fraction to a mixed one, we use the procedure: p/q = floor(p/q) + (p mod q)/q (p ≥ 0, q > 0)
+Normally, multiplication is implied, but with mixed fractions, addition is implied instead.
+For negative fractions, we ignore the negative sign, then place it into the fraction: -3⅔ = -(3 + ⅔), not (-3) + (⅔)
+
+Examples:
+¹¹⁄₃ --> 3⅔
+²⁹⁄₂₈ --> 1⅟₂₈
+-⁵⁄₄ --> -1¼ --> -1.25
