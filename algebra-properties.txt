@@ -1,0 +1,156 @@
+-- Closure --
+
+Addition, subtraction, multiplication, division, exponents & roots are all closed under real numbers.
+A real number can be an integer, terminating decimal, proper fraction, mixed fraction, or infinite decimal.
+
+The rules look like this:
+a + b = c
+a - b = c
+ab = c
+a/b = c (b ≠ 0)
+aⁿ = b (n must be an integer, if a = 0 then n ≥ 0)
+ⁿ√(a) = b (n must be a nonzero integer, if a = 0 then n > 0, if n is even then a ≥ 0)
+
+Although the examples shown below here will mainly show integer cases,
+all laws will hold under real numbers unless stated otherwise.
+
+-- Order of Operations --
+
+The order of operations (BODMAS) is a convention for calculating expressions correctly.
+
+The rules look like this:
+1. Brackets go first, changing the order.
+2. Order, a.k.a. Exponents/Roots go next.
+3. Divide/Multiply from left to right.
+4. Add/Subtract from left to right.
+
+Examples:
+10 * 4 + 5 --> 40 + 5 --> 45
+10 * (4 + 5) --> 10 * 9 --> 90
+6/2 * 3 --> 3 * 3 --> 9
+
+-- Commutative/Associative Laws --
+
+The commutative & associative laws state that we can change the order & grouping of terms
+in a pure addition or multiplication expression. This law is limited to only these 2 operations.
+
+Examples:
+3 * 11 = 11 * 3
+6 * (2 * 4) = (6 * 2) * 4
+6 + (2 + (5 + 7)) = (7 + 2) + (6 + 5)
+
+-- Sum of Products --
+
+By combining these 2 ideas above, we can get flexible with mixtures of addition & multiplication.
+Like bookshelves, we can change the order, but we must keep terms in the same product.
+
+Examples:
+2 + 5 * 3 = 3 * 5 + 2
+2 * 5 + 3 * 6 = 6 * 3 + 2 * 5
+9 * 4 * 4 + 4 * 2 + 5 + 2 = 2 * 4 + 2 + 9 * 4 * 4 + 5
+
+-- Distributive Laws --
+
+The distributive law lets us compose or decompose addition, subtraction & multiplication mixtures.
+The law states that a(b + c) = ab + ac. Limited to a list of additions or subtractions, all multiplied by a factor.
+
+Examples:
+5 * (3 + 11) = 5 * 3 + 5 * 11
+(7 - 3)/2 = 7/2 - 3/2
+4 * (9 + 3 + 11 - 5 - 5) = 4 * 9 + 4 * 3 + 4 * 11 - 4 * 5 - 4 * 5
+
+-- Identities/Inverses --
+
+0 is the additive/subtractive identity, while 1 is the multiplicative/divisive/exponential/root identity.
+
+Examples:
+5 + 0 = 5
+9 - 0 = 9
+3 * 1 = 3
+
+The negative of x is -x, while the reciprocal of x is 1/x. Also known as the additive/multiplicative inverses.
+
+Examples:
+9 + -9 = 0
+⅔ * 1.5 = 1
+10 * 0.1 = 1
+
+-- Laws of Exponents --
+
+Only integer exponents are allowed. Bases can stay real.
+
+The negative exponent rule states this: a⁻ⁿ = 1/aⁿ
+The product/quotient rules state these facts:
+aⁿ * aᵐ = aⁿ⁺ᵐ	aⁿ * bⁿ = (ab)ⁿ
+aⁿ/aᵐ = aⁿ⁻ᵐ	aⁿ/bⁿ = (a/b)ⁿ
+
+Examples:
+2⁶ * 3⁶ = (2 * 3)⁶
+4⁸/4³ = 4⁸⁻³
+10⁻² = 1/10²
+
+The order of exponents go top-down by default, but can be changed: a^n^m = a^(n^m), (aⁿ)ᵐ = aⁿᵐ
+We can find a way to have fractional exponents, using the root rule: a^(n/m) = ᵐ√(aⁿ)
+
+Examples:
+4^3^2 --> 4⁹ --> 262144
+(4³)² = 4³*²
+2¹·⁵ = √(2³)
+
+-- Percentage Calculation --
+
+To allow percentages in calculations, I made up some simple arithmetic laws.
+
+Percent of What: a% of b = 0.01ab
+What Percent of: a as a % of b = a/b * 100
+Percent Change: a + b% = a(1 + 0.01b)
+
+Examples:
+15% of 40 = 6
+50 as a % of 75 = 66⅔
+40 + 6% = 42.4
+
+-- Zero Product Law --
+
+Anything multiplied by 0 is 0. Anything to the power of 0 is 1. That's basically it.
+
+Examples:
+0 * 6 = 0
+(73 + 21) * 0 = 0
+0⁰ = 1
+
+-- Binomial Products --
+
+There are some special properties when squaring sums, differences, or multiplying a sum & a difference.
+
+The rules look like this:
+(a + b)² = a² + 2ab + b²
+(a - b)² = a² - 2ab + b²
+(a + b)(a - b) = a² - b²
+
+Examples:
+(5 + 4)² = 5² + 2 * 5 * 4 + 4²
+(5 - 4)² = 5² - 2 * 5 * 4 + 4²
+(5 + 4)(5 - 4) = 5² - 4²
+
+-- Firsts, Outers, Inners, Lasts --
+
+We also have a rule (FOIL) for multiplying binomials in general: (a + b)(c + d) = ac + ad + bc + bd
+It is like the Distributive law, but we only multiply 2-on-2 sums or differences.
+
+Examples:
+(2 + 3)(8 + 4) = 2 * 8 + 2 * 4 + 3 * 8 + 3 * 4
+(1 + 1)(1 + 1) = 1 * 1 + 1 * 1 + 1 * 1 + 1 * 1
+(5 - 2)(7 + 2) = 5 * 7 + 5 * 2 - 2 * 7 - 2 * 2
+
+-- Euclidean Distance --
+
+Calculating distance in geometry involves having a sum of squares, then taking the square root.
+
+The formula to calculate 2D Euclidean Distance is: d = √(a² + b²)
+We can even extend this idea to 3 dimensions or higher: d = √(a² + b² + c²)
+
+Examples:
+√(4² + 3²) = 5
+√(8² + 1²) = 8.0622577482...
+√(4² + 4² + 7²) = 9
