@@ -40,6 +40,10 @@ There are many different ways to show the time, so I made a time converter to di
 
 Note: This tool looks best on a 1080p display.
 
+### algebra-properties.txt
+
+A comprehensible list of notable properties in algebra & mathematical expressions. Based on a middle-high school curriculum level.
+
 # Random Stuff
 
 ### 1000.gif / 1000.png
