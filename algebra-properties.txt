@@ -90,7 +90,7 @@ Examples:
 10⁻² = 1/10²
 
 The order of exponents go top-down by default, but can be changed: a^n^m = a^(n^m), (aⁿ)ᵐ = aⁿᵐ
-We can find a way to have fractional exponents, using the root rule: a^(n/m) = ᵐ√(aⁿ)
+We can find a way to have fractional exponents, using the root rule: a^(n/m) = ᵐ√(aⁿ) (a ≥ 0)
 
 Examples:
 4^3^2 --> 4⁹ --> 262144
