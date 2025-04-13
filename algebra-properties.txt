@@ -90,7 +90,7 @@ Examples:
 10⁻² = 1/10²
 
 The order of exponents go top-down by default, but can be changed: a^n^m = a^(n^m), (aⁿ)ᵐ = aⁿᵐ
-We can find a way to have fractional exponents, using the root rule: a^(n/m) = ᵐ√(aⁿ) (a ≥ 0)
+We can find a way to have fractional exponents, using the root rule: a^(n/m) = ᵐ√(aⁿ) (if n is even then a ≥ 0)
 
 Examples:
 4^3^2 --> 4⁹ --> 262144
@@ -154,3 +154,14 @@ Examples:
 √(4² + 3²) = 5
 √(8² + 1²) = 8.0622577482...
 √(4² + 4² + 7²) = 9
+
+-- Expanding Roots --
+
+We can also expand factored roots, like how 2√(2) = √(8).
+Most people prefer factored roots, but I prefer them expanded instead.
+The general formula is: a * ⁿ√(b) = ⁿ√(aⁿb) (if n is even then a ≥ 0)
+
+Examples:
+2√(2) --> √(2² * 2) --> √(4 * 2) --> √(8) --> 2.8284271247...
+5∛(10) --> ∛(5³ * 10) --> ∛(125 * 10) --> ∛(1250) --> 10.7721734501...
+√(3)/2 --> √(3/2²) --> √(3/4) --> √(0.75) --> 0.8660254037...
