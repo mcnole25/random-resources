@@ -40,10 +40,6 @@ There are many different ways to show the time, so I made a time converter to di
 
 Note: This tool looks best on a 1080p display.
 
-### algebra-properties.txt
-
-A comprehensible list of notable properties in algebra & mathematical expressions. Based on a middle-high school curriculum level.
-
 # Random Stuff
 
 ### 1000.gif / 1000.png
@@ -68,15 +64,3 @@ Features:
 ### 2048-ultimate.png
 
 Just an image of hundreds of 2048 tiles designed by me.
-
-### bfdi-contestants.txt
-
-List of contestant names in BFB/TPOT (67 of them) with the failed debuters (24 of them) & 9 extra characters to make it 100 people in total. Free to use.
-
-### math-cook-book.txt
-
-A hand crafted text article for references to common math definitions, including algebra, number theory, & more.
-
-This can be useful as a refresher to how math works.
-
-Link: https://raw.githubusercontent.com/mcnole25/random-resources/refs/heads/master/math-cook-book.txt
