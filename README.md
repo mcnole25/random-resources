@@ -68,3 +68,5 @@ Just an image of hundreds of 2048 tiles designed by me.
 A calculator-like tool designed for exploring the properties of simple arithmetic with nonnegative integers. Powered by fraction.js, by @rawify.
 
 Supports exponents, in the form of repeated multiplication. You can also generate expressions & have some fun with this tool.
+
+Multiplication & division are calculated before addition & subtraction, exactly like in the order of operations (BODMAS) convention. Parentheses are not supported yet.
