@@ -24,15 +24,13 @@ To download, use an online bookmarklet converter & paste the raw document.
 
 ### precise-calculator.html
 
-A small high precision calculator available to download for offline use. Uses an offline copy of the big.js library inside the html file.
+A small high precision calculator available to download for offline use. Uses an offline copy of the big.js library (by @MikeMcl) inside the html file.
 
 Operations supported are: Basic arithmetic (+ - * /), exponents (integer power only), square root, factorial, nCr, cube root. Operations up to 500 decimals.
 
 The calculator has been tested & bugs have been recently fixed.
 
 Type "e" in an input for Euler's Number. Euler's Number is experimental & may have bugs.
-
-**NOTE: I do not own big.js. The library was borrowed by MikeMcl.**
 
 ### time-converter.html
 
@@ -64,3 +62,7 @@ Features:
 ### 2048-ultimate.png
 
 Just an image of hundreds of 2048 tiles designed by me.
+
+### arithmetic-explorer.html
+
+A calculator-like tool designed for exploring the properties of simple arithmetic with nonnegative integers. Powered by fraction.js, by @rawify.
