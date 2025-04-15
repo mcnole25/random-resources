@@ -66,3 +66,5 @@ Just an image of hundreds of 2048 tiles designed by me.
 ### arithmetic-explorer.html
 
 A calculator-like tool designed for exploring the properties of simple arithmetic with nonnegative integers. Powered by fraction.js, by @rawify.
+
+Supports exponents, in the form of repeated multiplication. You can also generate expressions & have some fun with this tool.
