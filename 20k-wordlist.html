@@ -23544,12 +23544,13 @@ zz</textarea>
 <textarea id="results" readonly=true style="width:500px;height:500px;resize:none;"></textarea>
 <script>
 function wdquery() {
-dd = wddata.value.split("\n").filter(a => String(a).includes(String(qury.value)));
+dd = wddata.value.split("\n"); odd = dd.length;
+dd = dd.filter(a => String(a).includes(String(qury.value)));
 if (Number(lngth.value) > 0) {
 dd = dd.filter(a => String(a).length == Number(lngth.value));
 }
 results.value = dd.join(",  ");
-res.innerText = dd.length + " / " + dd.length + " result(s) found";
+res.innerText = dd.length + " / " + odd + " result(s) found";
 }
 </script>
 </body></html>
