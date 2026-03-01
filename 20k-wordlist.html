@@ -38664,7 +38664,7 @@ zowel (NL)
 <textarea id="results" readonly=true style="width:900px;height:900px;resize:none;"></textarea>
 <script>
 function wdquery() {
-dd = wddata.value.replace(/[\[\]\{\}\(\)\+\*\#\$\€\√\π\÷\×\=\^\°\¢\¥\£\~\`\|\•\§\∆\<\>]/g, "").split("\n");
+dd = wddata.value.replace(/[\[\]\{\}\+\*\#\$\€\√\π\÷\×\=\^\°\¢\¥\£\~\`\|\•\§\∆\<\>]/g, "").split("\n");
 dd = [...new Set(dd)];
 dd = dd.sort();
 if (lang.value == "nl") {
