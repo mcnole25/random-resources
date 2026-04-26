@@ -62,3 +62,9 @@ Features:
 ### 2048-ultimate.png
 
 Just an image of hundreds of 2048 tiles designed by me.
+
+### random-words.html
+
+A tool that generates random entries from several of my constructed dictionaries.
+
+Link: http://htmlpreview.github.io/?https://raw.githubusercontent.com/mcnole25/random-resources/refs/heads/master/random-words.html
