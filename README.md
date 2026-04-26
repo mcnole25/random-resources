@@ -67,4 +67,4 @@ Just an image of hundreds of 2048 tiles designed by me.
 
 A tool that generates random entries from several of my constructed dictionaries.
 
-Link: http://htmlpreview.github.io/?https://raw.githubusercontent.com/mcnole25/random-resources/refs/heads/master/random-words.html
+Link: https://htmlpreview.github.io/?https://raw.githubusercontent.com/mcnole25/random-resources/refs/heads/master/random-words.html
