@@ -1,0 +1,10 @@
+h;
+dd = dd.filter(a => String(a).includes(String(qury.value)));
+if (Number(lngth.value) > 0) {
+dd = dd.filter(a => String(a).length == Number(lngth.value));
+}
+results.value = dd.join(",  ");
+res.innerText = dd.length + " / " + odd + " result(s) found";
+}
+</script>
+</body></html>
