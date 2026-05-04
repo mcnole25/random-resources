@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html><head>
+<title>Word Searcher</title>
+<style>
+* {
+font-size: 24px;
+font-family: arial;
+background-color: #000;
+color: #fff;
+}
+</style>
+</head><body>
+<textarea id="wddata" readonly=true style="visibility:hidden;display:none;"></textarea>
+<input id="qury" style="width:900px;"><br>
+<input id="lngth" style="width:150px;">
+<select id="lang" style="width:150px;">
+<option value="both">Both L.</option>
+<option value="en">English</option>
+<option value="nl">Dutch</option>
+</select>
+<button onclick="wdquery();" style="width:150px;">Search</button>
+<span id="res"></span><br>
+<textarea id="results" readonly=true style="width:900px;height:900px;resize:none;"></textarea>
+<div>Revised - 37K english, 5K dutch (42822 words total)</div>
+<script>
+function wdquery() {
+dd = wddata.value.replace(/[\[\]\{\}\+\*\#\$\€\√\π\÷\×\=\^\°\¢\¥\£\~\`\|\•\§\∆\<\>]/g, "").split(", ");
+dd = [...new Set(dd)];
+dd = dd.sort();
+if (lang.value == "nl") {
+dd = dd.filter(a => String(a).includes("(NL)"));
+} else if (lang.value == "en") {
+dd = dd.filter(a => !String(a).includes("(NL)"));
+}
+odd = dd.length;
+dd = dd.filter(a => String(a).includes(String(qury.value)));
+if (Number(lngth.value) > 0) {
+dd = dd.filter(a => String(a).length == Number(lngth.value));
+}
+results.value = dd.join(",  ");
+res.innerText = dd.length + " / " + odd + " result(s) found";
+}
+</script>
+</body></html>
