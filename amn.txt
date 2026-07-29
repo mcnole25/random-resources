@@ -1,0 +1,1846 @@
+Filter Function List:  Every accepted function in my math standard. Functions that are uncommon may be ambiguous & should rarely be used.
+
+
+
+NUMERICAL SYMBOLS
+0
+Digit 0
+
+1
+Digit 1
+
+2
+Digit 2
+
+3
+Digit 3
+
+4
+Digit 4
+
+5
+Digit 5
+
+6
+Digit 6
+
+7
+Digit 7
+
+8
+Digit 8
+
+9
+Digit 9
+
+.
+Decimal Point
+
+ab⁄c
+Mixed Fraction
+
+√2
+Root 2
+
+BASIC MATH
+x + y
+Addition
+
+x ‒ y
+Subtraction
+
+x * y
+Multiplication
+
+x⁄y
+Division
+
+xy
+Exponents
+
+√(x)
+Square Roots
+
+y√(x)
+nth Roots
+
+x% of y
+Percentages
+
+ADVANCED MATH
+(x, y)
+Coordinate
+
+|x|
+Absolute Value
+
+x!
+Factorial
+
+exp(x)
+Natural Exponent
+
+ln(x)
+Natural Logarithm
+
+logy(x)
+Logarithm Base
+
+f'(x)
+Derivative
+
+a∫bf(x)dx
+Integral
+
+Σf(n)
+Sum
+
+Πf(n)
+Product
+
+midpoint(C1, C2)
+Coordinate Midpoint
+
+distance(C1, C2)
+Coordinate Distance
+
+TRIGONOMETRY
+sin(x)
+Sine
+
+cos(x)
+Cosine
+
+tan(x)
+Tangent
+
+csc(x)
+Cosecant
+
+sec(x)
+Secant
+
+cot(x)
+Cotangent
+
+arcsin(x)
+Arcsine
+
+arccos(x)
+Arccosine
+
+arctan(x)
+Arctangent
+
+arccsc(x)
+Arccosecant
+
+arcsec(x)
+Arcsecant
+
+arccot(x)
+Arccotangent
+
+sinh(x)
+Hyperbolic Sine
+
+cosh(x)
+Hyperbolic Cosine
+
+tanh(x)
+Hyperbolic Tangent
+
+csch(x)
+Hyperbolic Cosecant
+
+sech(x)
+Hyperbolic Secant
+
+coth(x)
+Hyperbolic Cotangent
+
+arcsinh(x)
+Hyperbolic Arcsine
+
+arccosh(x)
+Hyperbolic Arccosine
+
+arctanh(x)
+Hyperbolic Arctangent
+
+arccsch(x)
+Hyperbolic Arccosecant
+
+arcsech(x)
+Hyperbolic Arcsecant
+
+arccoth(x)
+Hyperbolic Arccotangent
+
+STATISTICS
+mean(l)
+Mean
+
+median(l)
+Median
+
+min(l)
+Minimum
+
+max(l)
+Maximum
+
+quartile(l, n)
+nth Quartile
+
+quantile(l, x)
+Decimal Quantile
+
+stdev(l)
+Sample Standard Deviation
+
+stdevp(l)
+Population Standard Deviation
+
+var(l)
+Sample Variance
+
+varp(l)
+Population Variance
+
+mad(l)
+Mean Absolute Deviation
+
+cov(l1, l2)
+Sample Covariance
+
+covp(l1, l2)
+Population Covariance
+
+corr(l1, l2)
+Pearson Correlation
+
+spearman(l1, l2)
+Spearman Correlation
+
+stats(l)
+Quartile Stats
+
+count(l)
+Count
+
+total(l)
+Total
+
+LIST OPERATIONS
+join(l1, l2)
+Join Lists
+
+sort(l)
+Sort List
+
+shuffle(l)
+Shuffle List
+
+unique(l)
+Unique Elements
+
+l[n]
+nth Element
+
+DISTRIBUTIONS
+normaldist(x, y)
+Normal Distribution
+
+tdist(x, y, z)
+T Distribution
+
+poissondist(x)
+Poisson Distribution
+
+binomialdist(x, y)
+Binomial Distribution
+
+uniformdist(x, y)
+Uniform Distribution
+
+pdf(D, x)
+Probability Density Function
+
+cdf(D, x)
+Cumulative Distribution Function
+
+random(n)
+Random List
+
+NUMBER THEORY
+lcm(n, m)
+Least Common Multiple
+
+gcf(n, m)
+Greatest Common Factor
+
+mod(x, y)
+Modulo
+
+floor(x)
+Floor
+
+ceil(x)
+Ceiling
+
+round(x, n)
+Round Decimal Places
+
+sign(x)
+Sign
+
+nPr(x, y)
+Permutations
+
+nCr(x, y)
+Combinations
+
+COMPLEX NUMBERS
+real(c)
+Real Part
+
+imag(c)
+Imaginary Part
+
+conj(c)
+Conjugate
+
+arg(c)
+Argument
+
+MISCELLANEOUS FUNCTIONS
+tri(x)
+Triangular Sequence
+
+Formula: 0.5x(x + 1)
+
+fib(n)
+Fibonacci Sequence
+
+Formula: fib(n - 1) + fib(n - 2)
+
+catalan(x)
+Catalan Sequence
+
+Formula: 1⁄x + 1 * nCr(2x, x)
+
+digits(x, y)
+Digit Count of xy
+
+Formula: floor(log10(x)y) + 1
+
+!x
+Derangements
+
+Formula: round(x!⁄e)
+
+σ(x)
+Sigmoid Function
+
+Formula: 1⁄1 + e-x
+
+invsig(x)
+Inverse Sigmoid Function
+
+Formula: -ln(1⁄x - 1)
+
+combrep(x, y)
+Combinations with Repeats
+
+Formula: nCr(x + y - 1, y)
+
+dilation(x)
+Traveller Time Dilation
+
+Formula: √(1 - x2)
+
+observer(x)
+Observer Time Dilation
+
+Formula: 1⁄√(1 - x2)
+
+vadd(x, y)
+Velocity Addition
+
+Formula: x + y⁄1 + xy
+
+vsub(x, y)
+Velocity Subtraction
+
+Formula: x - y⁄1 - xy
+
+stirling(x)
+Stirling Approximation
+
+Formula: xxe-x√(τx)
+
+sdigits(x)
+Digit Count of x!
+
+Formula: floor(log10(x)x - log10(e)x + log10(√(τx))) + 1
+
+hex(x)
+Centered Hexagonal Sequence
+
+Formula: 3x(x - 1) + 1
+
+note(x)
+440 Hertz Semitone
+
+Formula: 440 * 2x⁄12
+
+rotation(x)
+Complex Number Rotation
+
+Formula: eτxi
+
+isPrime(n)
+Is Prime Number*
+
+PrimePi(n)
+Count of Primes*
+
+pn#
+nth Primorial*
+
+totient(n)
+Euler Totient*
+
+W(x)
+Lambert W Function*
+
+σ0(n)
+Factor Count of n*
+
+fix(x)
+Fix to Integer Part
+
+Formula: floor(|x|)sign(x)
+
+3BLUE1BROWN FUNCTIONS
+sinc(x)
+Sinc Function
+
+Formula: sin(x)⁄x
+
+sincpi(x)
+Sinc Function, Unit Area
+
+Formula: sin(πx)⁄πx
+
+rect(x)
+3B1B Rectangle Function
+
+Formula: 1 - sign(|x| - 0.5)⁄2
+
+longrect(x)
+3B1B Long Rectangle Function
+
+Formula: 1 - sign(|x| - 1)⁄2
+
+Qa(a, b, c)
+Quadratic Root A
+
+Formula: -b - √(b2 - 4ac)⁄2a
+
+Qb(a, b, c)
+Quadratic Root B
+
+Formula: -b + √(b2 - 4ac)⁄2a
+
+CONSTANTS
+e
+Euler's Number
+
+π
+Pi
+
+τ
+Tau
+
+i
+Imaginary Unit
+
+∞
+Infinity
+
+φ
+Phi
+
+Formula: (√(5) + 1)⁄2
+
+dr
+Degrees to Radians
+
+Formula: π⁄180
+
+rd
+Radians to Degrees
+
+Formula: 180⁄π
+
+c
+Speed of Light
+
+Formula: 299792458 m/s
+
+g
+Gravity on Earth
+
+Formula: 9.80665 m/s2
+
+γ
+Euler's Constant*
+
+ρ
+Plastic Ratio
+
+Formula: 3√(9 - √(69)) + 3√(9 + √(69))⁄3√(18)
+
+ℓP
+Planck Length
+
+ℓP ≈ 1.616255E-35 m
+
+COMMON VARIABLES
+f(x)
+Arbitrary Function
+
+n
+Arbitrary Integer
+
+r
+Radius
+
+θ
+Arbitrary Angle
+
+t
+Parametric Value
+
+v
+Velocity
+
+μ
+Mean*
+
+σ
+Standard Deviation*
+
+SPECIALS
+( )
+Parentheses
+
+-x
+Negation
+
+...
+Repeat Forever*
+
+=
+Equal
+
+<
+Less Than
+
+>
+Greater Than
+
+≤
+Less Than or Equal
+
+≥
+Greater Than or Equal
+
+≈
+Approximately Equal*
+
+≠
+Not Equal*
+
+≡
+Modular Congruence*
+
+℮
+Estimation Sign*
+
+⇒
+Implication*
+
+⇔
+Iff*
+
+a ≤ x ≤ b
+Inclusive-Inclusive Interval
+
+a ≤ x < b
+Inclusive-Exclusive Interval
+
+a < x ≤ b
+Exclusive-Inclusive Interval
+
+a < x < b
+Exclusive-Exclusive Interval
+
+EXTENSION: SUPPLEMENTARY MATH
+x : y
+Ratio*
+
+x°
+Degrees*
+
+x'
+Arcminutes*
+
+x"
+Arcseconds*
+
+x-y
+Inclusive Range*
+
+x-y (<y)
+Exclusive Range*
+
+$x
+Dollars*
+
+-$x
+Debt Amount*
+
+n for $x
+Quantity for Price*
+
+x¢
+Cents*
+
+m
+Meter*
+
+kg
+Kilogram*
+
+s
+Second*
+
+K
+Kelvin*
+
+x+
+X or More*
+
+≤x
+X or Less*
+
+>x
+Greater than X*
+
+<x
+Less than X*
+
+x%
+Isolated Percentage
+
+Formula: 0.01x
+
+x‰ of y
+Permillage
+
+Formula: 0.001xy
+
+x‰
+Isolated Permillage
+
+Formula: 0.001x
+
+~x
+Value with Unknown Error*
+
+x ± y
+Value with Known Error*
+
+xE+n
+Scientific Notation
+
+Formula: x * 10n
+
+#n
+Numerical Rank*
+
+EXTENSION: BINARY
+bx
+Binary Word*
+
+x << y
+Left Shift*
+
+x >> y
+Right Shift*
+
+x & y
+And*
+
+x | y
+Or*
+
+x ^ y
+Exclusive Or*
+
+EXTENSION: SET THEORY
+{}
+Empty Set*
+
+A ∪ B
+Union*
+
+A ∩ B
+Intersection*
+
+A \ B
+Difference*
+
+A ⊆ B
+Subset Of*
+
+A ⊇ B
+Superset Of*
+
+A ⊊ B
+Strict Subset Of*
+
+A ⊋ B
+Strict Superset Of*
+
+A ⊈ B
+Not a Subset Of*
+
+A ⊉ B
+Not a Superset Of*
+
+x ∈ A
+Element Of*
+
+x ∉ A
+Not an Element Of*
+
+||A||
+Cardinality*
+
+ℕ+
+Set of Positive Integers*
+
+ℕ
+Set of Nonnegative Integers*
+
+ℤ
+Set of Integers*
+
+ℚ
+Set of Rationals*
+
+ℝ
+Set of Reals*
+
+ℂ
+Set of Complex Numbers*
+
+A ∆ B
+Symmetric Difference*
+
+𝕌
+Universal Set*
+
+A′
+Set Complement*
+
+Ps(A)
+Power Set*
+
+O(f(x))
+Big O Notation*
+
+EXTENSION: ROMAN NUMERALS
+I
+1*
+
+V
+5*
+
+X
+10*
+
+L
+50*
+
+C
+100*
+
+D
+500*
+
+M
+1000*
+
+‾
+1000's Multiplier*
+
+EXTENSION: GOOGOLOGY
+n!!
+Double Factorial*
+
+n!(m)
+m-tuple Factorial*
+
+sf(n)
+Superfactorial*
+
+H(n)
+Hyperfactorial*
+
+ef(n)
+Exponential Factorial*
+
+n#
+Primorial up to N*
+
+x ↑↑ n
+Tetration*
+
+x ↑m n
+mth Arrow Hyperoperation*
+
+EXTENSION: INFINITIES
+ℵ0
+Cardinality of Positive Integers*
+
+ℵ1
+Cardinality of Real Numbers*
+
+ℵn
+Subsets of ℵn - 1*
+
+ω
+Omega*
+
+ε
+Epsilon*
+
+Ω
+Absolute Infinity*
+
+EXTENSION: LOGIC
+true
+True*
+
+false
+False*
+
+¬P
+Logical Not*
+
+P ∧ Q
+Logical And*
+
+P ∨ Q
+Logical Or*
+
+P ↮ Q
+Logical Exclusive Or*
+
+EXTENSION: SEQUENCES
+tet(x)
+Tetrahedral Sequence
+
+Formula: x⁄6(x + 1)(x + 2)
+
+star(x)
+Star Sequence
+
+Formula: 6x(x - 1) + 1
+
+ctri(x)
+Centered Triangular Sequence
+
+Formula: 1.5x(x - 1) + 1
+
+csq(x)
+Centered Square Sequence
+
+Formula: x2 + (x - 1)2
+
+cedge(x)
+Edges in an X-D Cube
+
+Formula: 0.5x * 2x
+
+EXTENSION: OTHER
+P(x)
+Probability*
+
+lim x→y f(x)
+Limit*
+
+HH:mm:ss
+24 Hour Standard Time*
+
+UTC+x
+UTC Timezone*
+
+y ∝ x
+Proportional*
+
+y ∝ x
+Inversely Proportional*
+
+a⁄b ⊕ c⁄d
+Naive Fraction Sum*
+
+a⁄b ⊖ c⁄d
+Naive Fraction Difference*
+
+l1 ☆ l2
+Convolution*
+
+C1 • C2
+Dot Product
+
+v⃗
+Vector*
+
+ζ(x)
+Zeta Function*
+
+pn
+nth Prime Number*
+
+mode(l)
+Mode*
+
+reverse(l)
+Reverse List*
+
+concat(x, y)
+Number Concatenation*
+
+###-###-####
+Phone Number*
+
+d MMM yyyy
+Date*
+
+∀x
+For All X*
+
+∃x
+There Exists X*
+
+partition(n, m)
+Count of Partitions into M Parts*
+
+DESMOS EXCLUSIVES
+histogram(l)
+View Histogram
+
+boxplot(l)
+View Box Plot
+
+dotplot(l)
+View Dot Plot
+
+rgb(x, y, z)
+RGB Colour
+
+hsv(x, y, z)
+HSV Colour
+
+polygon(C1 ... Cn)
+Polygon
+
+tone(x, v)
+Frequency Tone
+
+[x...y]
+List of Integers X-Y
+
+{...}
+Piecewise Rule
+
+OBSCURE NOTATION A
+·
+Roman Fraction 1/12*
+
+:
+Roman Fraction 2/12*
+
+⸫
+Roman Fraction 3/12*
+
+⸬
+Roman Fraction 4/12*
+
+:·:
+Roman Fraction 5/12*
+
+S
+Roman Fraction 1/2*
+
+L
+Liter*
+
+A
+Ampere*
+
+lx
+Lux*
+
+≪
+WAY Less Than*
+
+≫
+WAY Greater Than*
+
+Γ(x)
+Gamma Function
+
+Formula: (x - 1)!
+
+gn
+Graham's Number nth Iteration*
+
+BB(n)
+Busy Beaver Function*
+
+Rayo(n)
+Rayo Function*
+
+Fish(n)
+Fish Number Function*
+
+∄x
+There Does Not Exist X*
+
+ℙ
+Set of Prime Numbers*
+
+ℍ
+Set of Quaternions*
+
+î
+Quaternion Unit 1*
+
+ĵ
+Quaternion Unit 2*
+
+k̂
+Quaternion Unit 3*
+
+≔
+Is Defined As*
+
+𝔸
+Set of Algebraic Complex Numbers*
+
+𝔸R
+Set of Algebraic Real Numbers*
+
+𝕋
+Set of Transcendental Complex Numbers*
+
+𝕋R
+Set of Transcendental Real Numbers*
+
+𝕋𝔻
+Set of Terminating Decimals*
+
+ℝ𝔻
+Set of Repeating Decimals*
+
+x.yz̅
+Repeating Decimal Overline*
+
+x / y
+Inline Division*
+
+undefined
+Undefined
+
+Formula: 0⁄0 ;-)
+
+NaN
+Not a Number*
+
+null
+Null*
+
+A x B
+Cartesian Product*
+
+𝕆
+Set of Octonions*
+
+𝕊
+Set of Sedenions*
+
+ℍℝ
+Set of Hyperreals*
+
+ℍℂ
+Set of Hypercomplex Numbers*
+
+x→y+
+Limit from Positive Side*
+
+x→y−
+Limit from Negative Side*
+
+v ⊗ w
+Tensor Product*
+
+y1 ~ f(x1)
+Regression
+
+det(A)
+Determinant of Matrix*
+
+inv(A)
+Inverse of Matrix*
+
+[I]
+Identity Matrix*
+
+AT
+Transpose Matrix*
+
+λ
+Eigenvalue*
+
+λv⃗
+Eigenvector*
+
+leafCount(expr)
+Expression Leaf Count*
+
+simplify(expr)
+Simplify Expression*
+
+x++
+Increment of X
+
+Formula: x + 1
+
+x--
+Decrement of X
+
+Formula: x - 1
+
+x-1
+Multiplicative Inverse of X
+
+Formula: 1⁄x
+
+AB←―→
+Line AB*
+
+AB――→
+Ray AB*
+
+AB―――
+Line Segment AB*
+
+∠A
+Angle A*
+
+△ABC
+Triangle ABC*
+
+◿ABC
+Right Triangle ABC*
+
+□ABCD
+Quadrilateral ABCD*
+
+ce(x, y)
+Commutative Exponent
+
+Formula: exp(ln(x) * ln(y))
+
+sa(x, y)
+Subaddition
+
+Formula: ln(exp(x) + exp(y))
+
+G1 ≅ G2
+Geometric Congruence*
+
+G1 ≋ G2
+Geometric Similarity*
+
+0x
+Hexadecimal Indicator*
+
+↊
+Duodecimal Digit Dek*
+
+↋
+Duodecimal Digit El*
+
+xg
+Gradian*
+
+°C
+Degrees Celsius*
+
+TREE(n)
+TREE Function*
+
+y)x̅
+Long Division*
+
+OBSCURE NOTATION B
+[a1 ...
+
+⁝ ‌ ‌ an]
+
+2D Matrix*
+
+√3
+Root 3
+
+√5
+Root 5
+
+A
+Hexadecimal Digit 10*
+
+B
+Hexadecimal Digit 11*
+
+C
+Hexadecimal Digit 12*
+
+D
+Hexadecimal Digit 13*
+
+E
+Hexadecimal Digit 14*
+
+F
+Hexadecimal Digit 15*
+
+ⅈ32
+Set of 32-dimensional Numbers*
+
+ⅈ64
+Set of 64-dimensional Numbers*
+
+ⅈ2n
+Set of 2n-dimensional Numbers*
+
+ⅈ
+Set of All Possible "-onion" Numbers*
+
+ly
+Light Year
+
+Formula: 9460536207068016 m
+
+Pa
+Pascal*
+
+J
+Joule*
+
+W
+Watt*
+
+N
+Newton*
+
+\u[HEX]
+Unicode Codepoint*
+
+△√(x)
+Triangular Root
+
+Formula: 0.5√(8x + 1) - 0.5
+
+⬡√(x)
+Centered Hex Root
+
+Formula: √(4x - 1)⁄2√(3) + 0.5
+
+∟A
+Right Angle A*
+
+rgb(0, 0, 0)
+Black
+
+rgb(255, 255, 255)
+White
+
+rgb(255, 0, 0)
+Red
+
+rgb(0, 255, 0)
+Green
+
+rgb(0, 0, 255)
+Blue
+
+rgb(0, 255, 255)
+Cyan
+
+rgb(255, 0, 255)
+Magenta
+
+rgb(255, 255, 0)
+Yellow
+
+ha
+Hectare*
+
+unix
+Unix Milliseconds*
+
+ms
+Milliseconds*
+
+xᵐ"
+Arcmilliseconds*
+
+log2(x)
+Logarithm Base 2
+
+log10(x)
+Logarithm Base 10
+
+slogy(x)
+Tetrational Logarithm*
+
+s(n)logy(x)
+Hyperoperational Logarithm*
+
+x ↑↑↑ n
+Pentation*
+
+x 号 y
+Arbitrary Operation*
+
+EXTENSION: MUSIC
+𝅝
+Whole Note*
+
+𝅗𝅥
+1/2 Note*
+
+♩
+1/4 Note*
+
+♪
+1/8 Note*
+
+𝅘𝅥𝅯
+1/16 Note*
+
+𝅘𝅥𝅰
+1/32 Note*
+
+𝅘𝅥𝅱
+1/64 Note*
+
+𝅘𝅥𝅲
+1/128 Note*
+
+♫
+Beamed 1/8 Notes*
+
+♬
+Beamed 1/16 Notes*
+
+♬—
+Beamed 1/32 Notes*
+
+♭
+Flat Sign*
+
+♮
+Natural Sign*
+
+♯
+Sharp Sign*
+
+𝄞
+Treble Sign*
+
+𝄢
+Bass Sign*
+
+OBSCURE NOTATION C
+x ? y
+Unknown Comparison*
+
+∛(x)
+Cube Root
+
+∜(x)
+Fourth Root
+
+exp2(x)
+Power of 2
+
+exp10(x)
+Power of 10
+
+2×
+Double*
+
+3×
+Triple*
+
+10×
+Decuple*
+
+a×
+a-tuple*
+
+n ∣ m
+Divides*
+
+n ∤ m
+Does Not Divide*
+
+⋘
+ASTRONOMICALLY Less Than*
+
+⋙
+ASTRONOMICALLY Greater Than*
+
+⊤
+True Sign*
+
+⊥
+False Sign*
+
+x ↦ y
+Function Mapping*
+
+∴
+Therefore*
+
+∵
+Because*
+
+∓
+Minus-Plus*
+
+⋇
+Division-Times*
+
+≟
+Possibly Equal To*
+
+⩻
+Possibly Less Than*
+
+⩼
+Possibly Greater Than*
+
+⚀
+Die Face 1*
+
+⚁
+Die Face 2*
+
+⚂
+Die Face 3*
+
+⚃
+Die Face 4*
+
+⚄
+Die Face 5*
+
+⚅
+Die Face 6*
+
+prod(l)
+List Product*
+
+∬
+Double Integral*
+
+∭
+Triple Integral*
+
+∮
+Contour Integral*
+
+∯
+Surface Integral*
+
+∰
+Volume Integral*
+
+x‱ of y
+Permyriad
+
+x‱
+Isolated Permyriad
+
+𝕡
+Set of Polynomials*
+
+𝕞
+Set of Matrices*
+
+𝕖
+Set of Even Integers*
+
+𝕠
+Set of Odd Integers*
+
+𝕝
+Set of Linear Expressions*
+
+𝕢
+Set of Quadratic Expressions*
+
+δx
+Tiny Difference*
+
+∆x
+Tiny Increase*
+
+∇x
+Tiny Decrease*
+
+η(x)
+Eta (alternating zeta) Function*
+
+har(x)
+Harmonic Function*
+
+⩰
+VERY Close to Being Equal*
+
+⨧
+Add, then Double*
+
+⃤n
+Traingle Operation*
+
+⃞n
+Square Operation*
+
+⃝n
+Circle Operation*
+
+∂
+Partial Differential*
+
+x ÷ y
+Alternate Division Sign*
+
+∅
+Alternate Empty Set*
+
+∿
+Sine Wave*
+
+⟨
+Left Bra-Ket*
+
+⟩
+Right Bra-Ket*
+
+Ⓗ
+Heads*
+
+Ⓣ
+Tails*
+
+𝒵
+Zillion*
+
+illion(x)
+"-illion" Function
+
+⁈
+Unknown Mathematical Object
+
+ICONS
+●︎
+Circle*
+
+■︎
+Square*
+
+▲︎
+Upward Triangle*
+
+▶︎
+Rightward Triangle*
+
+▼︎
+Downward Triangle*
+
+◀︎
+Leftward Triangle*
+
+▬︎
+Horizontal Rectangle*
+
+▮︎
+Vertical Rectangle*
+
+♥︎
+Heart*
+
+★︎
+Star*
+
+▤︎
+Grid Rows*
+
+▥︎
+Grid Columns*
+
+▦︎
+Grid*
+
+🔥︎
+Hot Temperature*
+
+❄︎
+Cold Temperature*
+
+🖩︎
+Calculator*
+
+⏰︎
+Clock*
+
+☀︎
+Sun*
+
+🌅︎
+Sunrise*
+
+🌇︎
+Sunset*
+
+☁︎
+Cloud*
+
+○︎
+Empty Circle*
+
+◒︎
+Half Filled Circle*
+
+□︎
+Empty Square*
+
+◢︎
+Right Triangle LR*
+
+◣︎
+Right Triangle LL*
+
+◤︎
+Right Triangle UL*
+
+◥︎
+Right Triangle UR*
+
+✔︎
+Correct Answer*
+
+✖︎
+Incorrect Answer*
+
+◆︎
+Rhombus*
+
+⬟︎
+Pentagon*
+
+⬢︎
+Hexagon*
+
+◎︎
+Bullseye*
+
+OBSCURE NOTATION D
+⬠
+Pentagon Operation*
+
+⬡
+Hexagon Operation*
+
+◌
+n-gon Operation*
+
+𝔻p
+Set of Rationals such that mod(denominator, p) ≠ 0*
+
+{a, b [c] d}
+Bird's Array Notation*
+
+x ⧺ y
+Multiadd
+
+Formula: xy + x + y
+
+x ⧻ y
+Multimultiadd
+
+Formula: xy(x + y)
+
+polyomino(n)
+Number of Polyominoes with N cells*
+
+rubiks(x, y, z)
+Number of Permutations of Rubik's Cube*
+
+fib(t, f, a, o)
+Custom Fibonacci (console tools)*
+
+⬚
+Any Polyomino*
+
+↗
+Arrow (any direction)*
+
+hollowcube(x, y)
+Number of Blocks in a Cube with Y-thick Walls
+
+Formula: x3 - (x - 2y)3
+
+(f ◦ g)(x)
+Alternate Function Composition
+
+Formula: f(g(x))
+
+e ↓ x
+Inverse Arrow Notation*
+
+𝔽𝕀𝔾
+Set of All Possible Figurate Sequences*
+
+𝔽
+Set of All Functions*
+
+ℂ𝔽
+Set of All Continuous Functions*
+
+𝕄
+Multiversal Set (set of all sets)*
+
+isPractical(n)
+Is Practical Number*
+
+isPerfectPower(n)
+Is Perfect Power*
+
+xy
+Custom Number Base*
+
+x ‰ₒₒ of y
+Per Dekamyriad
+
+x ‰ₒₒ
+Isolated Per Dekamyriad
+
+x ppm of y
+Parts Per Million
+
+x ppm
+Isolated Parts Per Million
+
+x ppb of y
+Parts Per Billion
+
+x ppb
+Isolated Parts Per Billion
+
+x ppt of y
+Parts Per Trillion
+
+x ppt
+Isolated Parts Per Trillion
+
+factors(n)
+All Factors of N*
+
+primeFactors(n)
+All Prime Factors of N*
+
+Si(x)
+Wolfram Sine Integral*
+
+Ci(x)
+Wolfram Cosine Integral*
+
+Pn(x)
+Legendre Polynomial*
+
+erf(x)
+Error Function*
+
+bmi(k, m)
+Body Mass Index
+
+Formula: k⁄m2
+
+mersenne(p)
+Mersenne Number
+
+Formula: 2p - 1
+
+wage(y, h)
+Wage
+
+Formula: y⁄52.1775h
+
+dexp(x)
+Double Exponent
+
+Formula: eex
+
+expexp(x)
+Double Exponent 2, (x^x)^(x^x)
+
+Formula: xxx + 1
+
+frac(x)
+Fractional Part of X
+
+Formula: mod(|x|, 1)
+
+jsmod(x, y)
+JavaScript Mod of X
+
+Formula: mod(|x|, y)sign(x)
+
+MSI
+Maximum Safe Float Integer
+
+Formula: 253 - 1
+
+MI
+Maximum 64-bit Signed Integer
+
+Formula: 263 - 1
+
+squish(x)
+Squish 0-1 to 0-∞
+
+Formula: 1⁄1 - x - 1
+
+This is an extensive list of my officially accepted mathematical notation, sorted from most to least useful. There are 560 functions in total, from this standard. If a function name contains an asterisk *, it indicates that it's not compatible with the Desmos Graphing Calculator. Established as of September 2025. If you want to see a simplified version of this table, use the "Filter" tool at the top of this page.

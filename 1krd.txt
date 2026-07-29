@@ -1,0 +1,200 @@
+-- 32 unique to my dialect
+& @ centre colour nederlands favourite 5 4
+français deutsch info intro italiano lang langs learnt
+1000000 # #s 1 1s % %age +
+português español svenska temp 3 2 vocab 0
+
+-- Top 60
+a as at an and are all also about
+be by but
+can
+do
+example
+for from
+get
+how has have
+i is in it if
+like
+my more make
+not number numbers
+of on or one out other
+people
+so
+to the that this they time than there their
+up use
+we was with what when will
+you your
+
+-- Top 120
+any after
+been because
+could
+day data down don't different
+each even english
+fun first facts
+go good
+he here
+i'm its it's into
+just
+know
+learn
+me may most many
+no now new
+our only over
+questions
+see some same search
+two try them then take these think
+us used
+way work were want which would where world
+you're
+
+-- Top 250
+add ask again answer around always algebra another actually
+back both best being before better between
+code come can't common called change cookies contact calculator
+did does days during
+every evening examples
+few find feel function
+give games going geometry
+his had her home help however
+index important
+keep
+lot line life long look last let's little language learning
+much mean math made menu moon means might makes multiply
+need next negative
+own often
+put per page part point person privacy physics positive probability
+question
+real read right really
+say set she step such said show start still should square source something sentences
+too times thing those terms today total that's things through together
+using
+very value values
+who why well words while water write what's without
+year years yourself
+
+-- Top 400
+am away above average article anything according advertisement
+big body
+car cite case call check close coding create chance choose complex content copyright calculate
+done daily doing dutch donate divide doesn't dictionary
+end ever easy enough easier exactly exponent exponents
+far fact food form full found friend formula factors fractions
+got game group great graph google general
+hard hope high hours happy human helpful
+idea i've isn't inside instead include interest interesting
+july june
+known
+let love less left list login least later likely
+must money making minutes
+name never night
+off once open order
+play paper place prime please pretty puzzles process possible practice
+root rate rule result random results remember
+sun sure side says small since share space second simple someone showing standard
+top true tell test type talk three table there's thinking
+until usually understand
+verbs
+ways week word whole works weight working wikihow
+yes you've
+zero
+
+-- Top 600
+age app area alex able along amount asking almost adding across aren't already amazing activity
+bar bad blue blog based below brain break black build bottom become believe background
+cost coin comes color count circle company college certain calories counting
+due dog didn't digits degree decimal distance discount deviation difference
+eat equal earth event events either equation everything
+free fold four fonts family follow french factor friends favorite fraction frequency
+gets goes gives given guide german getting
+him half head hand hour helps heart height health here's higher having
+ice i'll image itself interview imaginary including information
+job
+log live length looking letters languages
+mind move maybe method myself matter memory months morning million measure multiplying mathematics multiplication
+note news names normal natural
+old
+pay past plus power plane parts points policy program problem probably
+red room ratio range rather related reading
+sky sign size site sets stop skip stay sound speed solve study solar sides short shows sleep school single system symbol simply social sounds section started special similar smaller spanish seconds sentence subtract students sequence sometimes
+term turn tree types takes talking triangle tutorials temperature
+under useful
+vs video variable
+weird weeks within writing written whether weather
+you'll
+
+-- Top 750
+air art april answers advanced american approach addition
+bit box buy book base blood behind building business beautiful
+cat came care cool city class cream changes current computer creating contains countries contribute conversation
+die dogs date draw dare design divided driving decimals division
+e else enjoy email equals expert everyone equations experience
+five funny future feeling further functions financial
+goal graphs github generally
+house happen humans history happens
+i'd ideas input italian improve integers interviews irrational
+king kind
+lots light lines looks level large letter longer longest learned
+man main mode month middle median minute machine
+nice
+ones option others online outside
+post phone pattern perfect popular paragraph
+run rest roots rules rational research relationship
+sum seen steps state spend sense story shown saying sample squares several specific straight statement
+tip tech told took tips text tools thank trying though thanks taking thought they're
+uses
+verb view
+wrong won't white
+
+-- Top 1000
+apps angle asked added action animal against animals accurate attention affiliate
+bio ball basic bring books became button becomes
+cup cut cats cold chart clear cause click costs cases coach cannot center course control created correct century country complete consider calendar compared changing companies conditions considered correlation calculators conversations
+dark death digit drive digital diagram discover download december directly dividing difficult direction divisible depending
+etc eyes early energy entire eating estimate especially
+fan feet fast face fine foot foods front feels figure faster forward finding february facebook following
+grow goals green groups greater
+hot hit hear hold hello heads healthy
+inch images imagine increase internet investment introduction
+jobs january javascript
+knowledge
+law low late lead loss leave lower local living largest
+map miss minus movie model media match march moving meaning message multiple magazine measured messages
+near named needs notice nothing notation
+office output original outcomes
+pm pie plot pick plan park paid price piece press police places public planet period product present pixabay project playing provide percent previous personal patterns position population percentage portuguese
+quite quickly quadratic
+row reach return reason record running russian recommended
+soon save skin sell send seem stuff speak sweet south store survey states static submit skills salary student squared subject science service stories surface symbols savings solving support swedish southern starting simplify somebody solution speaking settings
+tax team truth topic third twice travel theory theorem thoughts
+unit units understanding
+various version variables vocabulary
+wait wish wear went watch we're we'll women wanted wearing
+yet
+
+
+!! -- DO NOT INCLUDE: 24 words that barely made it -- !!
+1001. ok
+1002. opposite
+1003. repeat
+1004. road
+1005. sales
+1006. turkish
+1007. updated
+1008. walk
+1009. youtube
+1010. biggest
+1011. bottles
+1012. children
+1013. chocolate
+1014. couple
+1015. danish
+1016. education
+1017. larger
+1018. mask
+1019. nearly
+1020. northern
+1021. norwegian
+1022. pdf
+1023. summer
+1024. void
