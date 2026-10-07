@@ -1,0 +1,36 @@
+# Addition of random real decimals #
+for (i = 0; i < 256; i++) {
+d = Math.floor(Math.random()*7)+1;
+c = Math.floor(Math.random()*7)+1;
+p = Math.round(Math.random()*10**d)/10**d;
+s = Math.round(Math.random()*10**c)/10**c;
+console.log(p + " + " + s + " = " + (p+s).toFixed(13)*1);}
+
+# Subtraction of random real decimals #
+for (i = 0; i < 256; i++) {
+d = Math.floor(Math.random()*7)+1;
+c = Math.floor(Math.random()*7)+1;
+p = Math.round(Math.random()*10**d)/10**d;
+s = Math.round(Math.random()*10**c)/10**c;
+console.log(p + " − " + s + " = " + (p-s).toFixed(13)*1);}
+
+# Product of random real decimals #
+for (i = 0; i < 256; i++) {
+d = Math.floor(Math.random()*7)+1;
+c = Math.floor(Math.random()*7)+1;
+p = Math.round(Math.random()*10**d)/10**d;
+s = Math.round(Math.random()*10**c)/10**c;
+console.log(p + " * " + s + " = " + (p*s).toFixed(14)*1);}
+
+# Square of random real decimal #
+for (i = 0; i < 256; i++) {
+d = Math.floor(Math.random()*7)+1;
+p = Math.round(Math.random()*10**d)/10**d;
+console.log("(" + p + ")² = " + (p**2).toFixed(14)*1);}
+
+# Division of random real decimal to integer #
+for (i = 0; i < 256; i++) {
+d = Math.floor(Math.random()*7)+1; u=Math.random()*8;
+c = 2**Math.floor(u)*5**Math.floor(Math.random()*4);
+p = Math.round(Math.random()*10**d)/10**d;
+console.log(p + "/" + c + " = " + (p/c).toFixed(14)*1);}
